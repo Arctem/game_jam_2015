@@ -1,0 +1,31 @@
+briefing = Room('Briefing Room',
+	'Briefing Room.', possible_start=False)
+world.add_room(briefing)
+
+operations = Room('Operations Room',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(operations)
+
+quarters = Room('Quarters',
+	'This is where you spend all of your days', possible_start=True)
+world.add_room(quarters)
+
+sick = Room('Sick Bay',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(sick)
+
+galley = Room('Galley',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(galley)
+
+cafeteria = Room('Cafeteria',
+	'Just another boring room for boring people.', possible_start=True)
+world.add_room(cafeteria)
+
+rec = Room('Recreation Room',
+	'Just another boring room for boring people.', possible_start=True)
+world.add_room(rec)
+
+prop = Room('propulsion room',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(prop)
