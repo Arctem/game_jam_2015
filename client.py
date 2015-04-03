@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter.scrolledtext import ScrolledText
 import socket
 import pickle
 import threading
@@ -13,12 +14,26 @@ def socket_thread(sock):
     while True:
         data = sock.recv(1024)
         if data:
-            print(pickle.loads(data))
+            data = pickle.loads(data)
+            print(data)
+            write_to(text_out, data)
         else:
             break
 
+def write_to(dest, msg):
+    #dest.update_idletasks()
+    #scrolled_down = dest.bbox(tk.END) is not None
+    #print(dest.bbox(tk.END))
+    dest.configure(state='normal')
+    dest.insert(tk.END, msg + '\n')
+    dest.configure(state='disabled')
+    #if scrolled_down:
+    #   print(scrolled_down)
+    dest.see(tk.END)
+
 def main():
     global text_in
+    global text_out
     global sock
 
     HOST = 'arctem.com'
@@ -32,10 +47,11 @@ def main():
 
     window = tk.Tk()
 
-    text_out = tk.Text(window)
+    text_out = ScrolledText(window, state='disabled', takefocus=0)
+    #text_out.configure(state='disabled')
     text_out.pack()
 
-    text_in = tk.Entry(window)
+    text_in = tk.Entry(window, takefocus=1)
     text_in.bind("<Return>", evaluate_in)
     text_in.pack()
 
