@@ -3,6 +3,34 @@ import socket
 import sys
 import pickle
 
+from room import Room
+from player import Player
+from world import World
+
+def valid_name(name):
+    if ' ' in name:
+        return False
+    return True
+
+def handle_message(client, player_data, msg, world):
+    if player_data[client] is None:
+        if valid_name(msg):
+            player_data[client] = Player(client, msg)
+            client.sendall(pickle.dumps('Welcome, {}'.format(msg)))
+            world.add_player(player_data[client])
+        else:
+            client.sendall(pickle.dumps('Invalid username.'))
+            client.sendall(pickle.dumps('What is your name?'))
+
+def create_world():
+    world = World()
+
+    barracks = Room('Barracks',
+        'a barracks, cleaned with military efficiency.', possible_start=True)
+    world.add_room(barracks)
+
+    return world
+
 def main():
     host = ''
     port = 50001
@@ -14,6 +42,9 @@ def main():
     server.listen(backlog)
 
     clients = [server]
+    player_data = {}
+
+    world = create_world()
 
     running = True
     while running:
@@ -24,6 +55,8 @@ def main():
                 client, address = server.accept()
                 print("Received connection from {}.".format(address))
                 clients.append(client)
+                player_data[client] = None
+                client.sendall(pickle.dumps('What is your name?'))
 
             else:
                 #handle other sockets
@@ -35,6 +68,7 @@ def main():
                 #print(data)
                 if data:
                     data = pickle.loads(data)
+                    handle_message(s, player_data, data, world)
                     print(data)
                     for c in clients:
                         if c is not server:
@@ -44,6 +78,7 @@ def main():
                     print("Connection closed remotely.")
                     s.close()
                     clients.remove(s)
+                    del player_data[s]
 
     server.close()
 

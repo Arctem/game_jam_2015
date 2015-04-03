@@ -1,3 +1,11 @@
 class Connection:
-    def __init__(self):
-        pass
+    def __init__(self, origin, destination, desc=None, pass_desc=None,
+            locked = False):
+        self.origin = origin
+        self.destination = destination
+        self.desc = desc
+        self.pass_desc = pass_desc
+        self.locked = locked
+
+    def description(self):
+        return self.desc

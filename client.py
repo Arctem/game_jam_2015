@@ -10,7 +10,7 @@ def evaluate_in(event):
     sock.sendall(pickle.dumps(text))
     text_in.delete(0, tk.END)
 
-def socket_thread(sock):
+def socket_thread(sock, text_out):
     while True:
         data = sock.recv(1024)
         if data:
@@ -33,17 +33,8 @@ def write_to(dest, msg):
 
 def main():
     global text_in
-    global text_out
     global sock
 
-    HOST = 'arctem.com'
-    HOST = 'localhost'
-    PORT = 50001
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((HOST, PORT))
-
-    t = threading.Thread(target=socket_thread, args=(sock,))
-    t.start()
 
     window = tk.Tk()
 
@@ -54,6 +45,16 @@ def main():
     text_in = tk.Entry(window, takefocus=1)
     text_in.bind("<Return>", evaluate_in)
     text_in.pack()
+
+    
+    HOST = 'arctem.com'
+    HOST = 'localhost'
+    PORT = 50001
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((HOST, PORT))
+
+    t = threading.Thread(target=socket_thread, args=(sock, text_out))
+    t.start()
 
     window.mainloop()
 
