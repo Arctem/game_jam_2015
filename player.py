@@ -8,12 +8,12 @@ class Player:
         self.inventory = []
         self.clothes = clothes
 
-    def description():
-        msg = [name]
+    def description(self):
+        msg = [self.name + '.']
         if self.clothes:
-            msg.append('They are completely naked.')
+            msg.append('They are wearing a {} jumpsuit.'.format(self.clothes))
         else:
-            msg.append('They are wearing a {} jumpsuit.'.format(clothes))
+            msg.append('They are completely naked.')
         return ' '.join(msg)
 
     def send_room_description(self):

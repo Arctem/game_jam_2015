@@ -69,10 +69,6 @@ def main():
                 if data:
                     data = pickle.loads(data)
                     handle_message(s, player_data, data, world)
-                    print(data)
-                    for c in clients:
-                        if c is not server:
-                            c.sendall(pickle.dumps(data))
                 else:
                     #this socket closed
                     print("Connection closed remotely.")
