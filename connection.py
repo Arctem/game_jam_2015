@@ -7,5 +7,8 @@ class Connection:
         self.pass_desc = pass_desc
         self.locked = locked
 
+    def short_description(self):
+        return self.short_desc
+
     def description(self):
         return self.desc
