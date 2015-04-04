@@ -1,5 +1,7 @@
 import random
 
+from special.clone import ClonePod
+
 class World:
     def __init__(self):
         self.rooms = []
@@ -13,3 +15,7 @@ class World:
 
     def add_room(self, room):
         self.rooms.append(room)
+
+    def get_random_spawn(self):
+        spawns = list(filter(lambda r: self.room.contains(ClonePod)
+            ,self.rooms))

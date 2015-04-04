@@ -1,5 +1,7 @@
 import pickle
 
+import kill_strings
+
 class Player:
     def __init__(self, sock, name, clothes=None):
         self.name = name
@@ -38,7 +40,7 @@ class Player:
             room = self.room.description()
             msg.append('You are in {}'.format(room))
             for obj in self.room.contents:
-                if obj is not self and obj.short_description():
+                if obj is not self:
                     msg.append('There is {}.'.format(obj.short_description()))
             for obj in self.room.connections:
                 if obj.short_description():
@@ -51,6 +53,17 @@ class Player:
         self.room.player_leave(self)
         self.send_msg(connection.pass_desc)
         connection.destination.place_player(self)
+
+    def kill(self, method):
+        self.inform_others(other_msg[method].format(name=self.name))
+        for item in self.inventory:
+            self.inform_others('{} drops {}.'.format(self.name, item.short_desc))
+            self.room.add_content(item)
+            self.item.player = None
+        self.inventory = []
+        
+
+        self.send_msg(self_msg[method])
 
     def send_msg(self, msg):
         self.sock.sendall(pickle.dumps(msg))

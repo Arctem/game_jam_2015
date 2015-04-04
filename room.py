@@ -23,6 +23,19 @@ class Room:
         self.contents.append(item)
         item.room = self
 
+    def contains(self, obj):
+        if isinstance(obj, Attribute):
+            for i in self.room.contents:
+                for j in i.attributes:
+                    if isinstance(j, obj):
+                        return False
+        elif isinstance(obj, Decoration) or isinstance(obj, Item):
+            for i in self.room.contents:
+                if isinstance(i, obj):
+                    return False
+        else:
+            return False
+
     def add_connection(self, connection):
         self.connections.append(connection)
 

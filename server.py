@@ -5,6 +5,7 @@ import pickle
 
 from connection import Connection
 from decoration import Decoration
+from special.clone import ClonePod
 from item import Item
 from room import Room
 from player import Player
@@ -76,6 +77,7 @@ def create_world():
     canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
         'A pile of assorted human bones.', ['pile', 'skeleton', 'skeletons',
         'bones']))
+    canteen.add_content(ClonePod())
     barracks.add_connection(Connection(barracks, canteen, 'a hallway',
         'A hallway leading to the canteen.',
         'You walk through the hallway.', ('hall',)))
