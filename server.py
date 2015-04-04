@@ -3,6 +3,7 @@ import socket
 import sys
 import pickle
 
+from connection import Connection
 from decoration import Decoration
 from item import Item
 from room import Room
@@ -33,7 +34,8 @@ def handle_message(client, player_data, msg, world):
                 player.send_room_description()
             else:
                 for obj in player.room.contents + player.room.connections:
-                    if args.lower() in obj.name.lower():
+                    if args.lower() in (obj.keywords if\
+                        isinstance(obj, Connection) else obj.name.lower()):
                         player.sock.sendall(pickle.dumps(obj.description()))
 
 def create_world():
@@ -47,6 +49,12 @@ def create_world():
         'A gun with "Ray" embossed on the side.'))
     canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
         'A pile of assorted human bones.'))
+    barracks.add_connection(Connection(barracks, canteen, ('hall',),
+        'A hallway leading to the canteen.', 'a hallway',
+        'You walk through the hallway.'))
+    canteen.add_connection(Connection(canteen, barracks, ('hall',),
+        'A hallway leading to the barracks.', 'a hallway',
+        'You walk through the hallway.'))
     world.add_room(barracks)
     world.add_room(canteen)
 

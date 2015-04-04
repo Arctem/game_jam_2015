@@ -32,6 +32,9 @@ class Player:
             for obj in self.room.contents:
                 if obj is not self and obj.short_description():
                     msg.append('There is {}.'.format(obj.short_description()))
+            for obj in self.room.connections:
+                if obj.short_description():
+                    msg.append('There is {}.'.format(obj.short_description()))
 
         msg = '\n'.join(msg)
         self.sock.sendall(pickle.dumps(msg))

@@ -18,6 +18,9 @@ class Room:
         self.contents.append(item)
         item.room = self
 
+    def add_connection(self, connection):
+        self.connections.append(connection)
+
     def short_description(self):
         return self.short_desc
 
