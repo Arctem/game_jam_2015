@@ -126,7 +126,7 @@ def create_world():
     #Item Additions
     f = open('list_items.txt', 'r')
     decs = f.read()
-    decs = decs.split()
+    decs = decs.split('\n')
     for i in decs:
         if i and i[0] != '#':
             name, keyword, attribute, short_desc, description, room = i.split(';');
@@ -144,10 +144,10 @@ def create_world():
 
     f = open('list_connections.txt', 'r')
     decs = f.read()
-    decs = decs.split()
+    decs = decs.split('\n')
     for i in decs:
         if i and i[0] != '#':
-            name, keyword, attribute, short_desc, description, source, destination, pass_desc, locked, locked_desc = room.split(';');
+            name, keyword, attribute, short_desc, description, source, destination, pass_desc, locked, locked_desc = i.split(';');
             keyword = keyword.split(':')
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
@@ -157,7 +157,7 @@ def create_world():
                     locked = True
             for s in world.rooms:
                 if source in s.keywords:
-                    for d in s.keywords:
+                    for d in world.rooms:
                         if destination in d.keywords:
                             s.add_connection(Connection(s,d, short_desc, description, pass_desc, keyword,attribute, locked))
                             break
