@@ -1,7 +1,9 @@
 class Item:
-    def __init__(self, name, short_desc=None, desc=None):
+    def __init__(self, name, short_desc, desc, keywords, attributes=[]):
         self.name = name
         self.short_desc = short_desc
+        self.keywords = keywords
+        self.attributes = attributes
         self.desc = desc
         self.room = None
         self.player = None
