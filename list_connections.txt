@@ -32,7 +32,7 @@ white_stairs_up;white stairs:white:up stairs:stairs;;There is a white staircase 
 
 steel_door_in;steel door:steel;;There is a forboding steel door.;The steel door sends a chill down your spine when you look at it closely. This leads to the brig.;corridor;brig;You step through.;1;You cannot enter.
 
-steel_door_out;steel:door:steel door;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;0;You're locked in, you traitor.
+steel_door_out;steel:door:steel door;;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;0;You're locked in, you traitor.
 
 double_door_in;double door:double;;There is a double door.;The double door is very large. It goes to the hold.;corridor;hold;You walk through.;1;You cannot access the hold.
 
