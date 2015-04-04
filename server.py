@@ -46,13 +46,17 @@ def handle_message(client, player_data, msg, world):
             if len(args) == 0:
                 player.sock.sendall(pickle.dumps('Where do you want to go?'))
             else:
+                went = False
                 for con in player.room.connections:
                     if args.lower() in con.keywords:
                         if con.locked:
                             player.sock.sendall(pickle.dumps(con.locked_desc))
                         else:
                             player.move_through(con)
+                        went = True
                         break
+                if not went:
+                    player.sock.sendall("Can't go {}.".format(args))
 
 def create_world():
     world = World()
