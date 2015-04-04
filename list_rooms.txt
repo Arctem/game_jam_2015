@@ -1,0 +1,23 @@
+operations:operations;operations room;ops room;ops:You have entered the ops room.:You look around. The operations room is fully stocked with the latest technologies. Holographic displays cut across sections of the room. People in the corner of the room debate different tactics.:0
+
+briefing:briefing;briefing room;brief:This is the briefing room:Here is a bigger description of the briefing room.:0
+
+landing:landing;first floor hallway; first floor hall:This is the first floor hall.:Aren't halls great?:0
+
+cafeteria:cafeteria;cafe:This is the cafeteria:This is a longer description about the cafeteria.:1
+
+galley:galley;kitchen:This is the galley, or the kitchen.:I wish I knew more about galleys for the long description.:0
+
+quarters:quarters;quarter;dorms;dorm;my room;room:Here are your quarters.:More detailed description about your quarters.:1
+
+sickbay:sick bay;sickbay;hospital:This is the sick bay.:People tend to come here when they are sick, believe it or not.:0
+
+hall:hall;second floor hall;second floor hallway:Welcome to the second floor hallway.:To the north there is a staircase leading up. To the south there is a staircase leading down. To the ....:0
+
+propulsion:propulsion;propulsion room:This is the propulsion room.:You look around the propulsion room.:0
+
+hold:hold;prison;jail:You are in the hold.:you look around the hold.:0
+
+rec:rec room;recreation room;rec;recreation:This is the recreation room.:You look around.:1
+
+corridor:corridor;third floor hall;third floor hallway:This is the third floor hallway:You enter the third floor hallway.:0
