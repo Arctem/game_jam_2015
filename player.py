@@ -20,9 +20,17 @@ class Player:
         return ' '.join(msg)
 
     def set_room(self, room):
+        if self.room:
+            self.inform_others('{} has left the room.'.format(self.name))
         self.room = room
         self.sock.sendall(pickle.dumps('You find yourself in {}.'
             .format(room.short_description())))
+        self.inform_others('{} has entered the room.'.format(self.name))
+
+    def inform_others(self, msg):
+        for person in filter(lambda c: isinstance(c, Player) and c is not self,
+                self.room.contents):
+            person.sock.sendall(pickle.dumps(msg))
 
     def send_room_description(self):
         msg = []
