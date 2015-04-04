@@ -3,9 +3,10 @@ import pickle
 import kill_strings
 
 class Player:
-    def __init__(self, sock, name, clothes=None):
+    def __init__(self, sock, name, world, clothes=None):
         self.name = name
         self.sock = sock
+        self.world = world
         self.room = None
         self.inventory = []
         self.clothes = clothes
@@ -61,9 +62,10 @@ class Player:
             self.room.add_content(item)
             self.item.player = None
         self.inventory = []
-        
 
         self.send_msg(self_msg[method])
+
+        self.set_room(self.world.get_random_spawn())
 
     def send_msg(self, msg):
         self.sock.sendall(pickle.dumps(msg))

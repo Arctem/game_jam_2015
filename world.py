@@ -19,3 +19,4 @@ class World:
     def get_random_spawn(self):
         spawns = list(filter(lambda r: self.room.contains(ClonePod)
             ,self.rooms))
+        return random.choice(spawns)
