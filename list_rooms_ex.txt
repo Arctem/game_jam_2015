@@ -1,0 +1,10 @@
+For now, I'm trying to go with a layout like this:
+room_name::keyword_0;keyword_1;...keyword_n;;'room description';;;
+Where it's all in a single line, and each keyword can be done inside the room.
+If you have any worries or suggestions, post them on:
+github.com/Arctem/game_jam_2015/issues/1
+
+If there are issues with the multiple colons/semicolons, let me know and I'll look for new characters to use instead of the same ones on repeat.
+
+Example:
+cafeteria::look;take;;'The cafeteria is full of tables and chairs where the people aboard their vessle eat their food. There is...etc....';;;

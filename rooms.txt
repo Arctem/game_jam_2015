@@ -1,51 +1,51 @@
-briefing = Room('Briefing Room',
-	'Briefing Room.', possible_start=False)
+briefing = Room('Briefing Room', 'You are now in the briefing room.',
+	'This is the briefing room. There is a long table in the center, topped with a small chandelier. Along the table there are several nice chairs. Atop the table above every chair there is an up-to-date holopad ready for use in the next meeting.', possible_start=False)
 world.add_room(briefing)
 
-operations = Room('Operations Room',
+operations = Room('Operations Room', 'You are now in the operations room.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(operations)
 
-quarters = Room('Quarters',
+quarters = Room('Quarters', 'You are now in your quarters.',
 	'This is where you spend all of your days', possible_start=True)
 world.add_room(quarters)
 
-sick = Room('Sick Bay',
+sick = Room('Sick Bay', 'You are now in the sick bay.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(sick)
 
-galley = Room('Galley',
+galley = Room('Galley', 'You are now in the galley.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(galley)
 
-cafeteria = Room('Cafeteria',
+cafeteria = Room('Cafeteria', 'You are now in the cafeteria',
 	'Just another boring room for boring people.', possible_start=True)
 world.add_room(cafeteria)
 
-rec = Room('Recreation Room',
+rec = Room('Recreation Room', 'You are now in the rec room.',
 	'Just another boring room for boring people.', possible_start=True)
 world.add_room(rec)
 
-prop = Room('propulsion room',
+prop = Room('propulsion room', 'You are now in the propulsion room.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(prop)
 
-brig = Room('Brig',
+brig = Room('Brig', 'You are now in the brig.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(brig)
 
-storage = Room('Storage Room',
+storage = Room('Storage Room', 'You are now in the hold.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(storage)
 
-hall1 = Room('First Floor Hall',
+hall1 = Room('First Floor Hall', 'You are now in the top floor hall.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(operations)
 
-hall2 = Room('Second Floor Hall',
+hall2 = Room('Second Floor Hall', 'You are now in the middle floor hall.',
 	'Just another boring room for boring people.', possible_start=True)
 world.add_room(hall2)
 
-hall3 = Room('Third Floor Hall',
+hall3 = Room('Third Floor Hall', 'you are now in the bottom floor hall.',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(hall3)
