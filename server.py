@@ -38,28 +38,28 @@ def handle_message(client, player_data, msg, world):
                     if args.lower() in (obj.keywords if\
                         isinstance(obj, Connection) else obj.name.lower()):
                         looked_at = True
-                        player.sock.sendall(pickle.dumps(obj.description()))
+                        player.send_msg(obj.description())
                 if not looked_at:
-                    player.sock.sendall(pickle.dumps('There is no {} here.'
-                        .format(args)))
+                    player.send_msg('There is no {} here.'
+                        .format(args))
         elif cmd == 'GO':
             if len(args) == 0:
-                player.sock.sendall(pickle.dumps('Where do you want to go?'))
+                player.send_msg('Where do you want to go?')
             else:
                 went = False
                 for con in player.room.connections:
                     if args.lower() in con.keywords:
                         if con.locked:
-                            player.sock.sendall(pickle.dumps(con.locked_desc))
+                            player.send_msg(con.locked_desc)
                         else:
                             player.move_through(con)
                         went = True
                         break
                 if not went:
-                    player.sock.sendall("Can't go {}.".format(args))
+                    player.send_msg("Can't go {}.".format(args))
         elif cmd == 'SAY':
             player.inform_others('{} says "{}".'.format(player.name, args))
-            player.sock.sendall(pickle.dumps('You say "{}".'.format(args)))
+            player.send_msg('You say "{}".'.format(args))
 
 def create_world():
     world = World()
