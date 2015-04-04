@@ -40,8 +40,10 @@ class Player:
     def send_room_description(self):
         msg = []
         if self.room:
-            room = self.room.description()
-            msg.append('You are in {}'.format(room))
+            room = self.room.name
+            desc = self.room.description()
+            msg.append('You are in {}.'.format(room))
+            msg.append(' {}.'.format(desc))
             for obj in self.room.contents:
                 if obj is not self:
                     msg.append('There is {}.'.format(obj.short_description()))

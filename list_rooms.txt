@@ -1,0 +1,23 @@
+operations;operations:operations room:ops room:ops;;You are in the ops room.;You look around. The operations room of Vessel XIV is fully stocked with the latest technologies. Holographic displays cut across sections of the room. People in the corner of the room debate different tactics.;0
+
+briefing;briefing:briefing room:brief;;This is the briefing room;You look around. The briefing room is brightly lit. There is little in this room, other than bare essentials, to keep people from being distracted.;0
+
+landing;landing:first floor hallway:first floor hall;;You are in the landing of the vessel.;The landing is very bare, but brightly lit. Lights line the walls on each side.;0
+
+cafeteria;cafeteria:cafe;This is the cafeteria;;The cafeteria is a very large room. It is fit to feed half of the people in Vessel XIV at the same time.;1
+
+galley;galley:kitchen;;This is the galley, or the kitchen.;This is a dimly lit room, full of chefs and cooking stuffs. This galley feeds the entire Vessel's people. There is a white door that leads to the cafeteria.;0
+
+quarters;quarters:quarter:dorms:dorm:my room:room:my quarters;;Here are your quarters.;You look around. This is your room.;1
+
+sickbay;sick bay:sickbay:hospital;;This is the sick bay.;You look around, seeing people laying in beds, recovering from some illness or exhaustion. There is a door to the hallway.;0
+
+hall;hall:second floor hall:second floor hallway;;You are in the hall.;You look around. The hall is well lit and spacious, able to accomodate passerby traffic easily. Towards the bow is a staircase to the corridor. To the far left is a door to the cafeteria. To the far right is a door to your quarters. To the near left is a door to the recreation room. To the stern is a staircase that leads to the landing.;1
+
+propulsion;propulsion:propulsion room;;This is the propulsion room.;You look around the propulsion room.;0
+
+hold;hold:prison:jail;You are in the hold.;;you look around the hold. There is a door to the corridor.;0
+
+rec;rec room:recreation room:rec:recreation;;This is the recreation room.;You look around.;1
+
+corridor;corridor:third floor hall:third floor hallway;;This is the lower corridor of Vessel XIV.;You look around.;0
