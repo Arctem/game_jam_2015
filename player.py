@@ -38,3 +38,8 @@ class Player:
 
         msg = '\n'.join(msg)
         self.sock.sendall(pickle.dumps(msg))
+
+    def move_through(self, connection):
+        self.room.player_leave(self)
+        self.sock.sendall(pickle.dumps(connection.pass_desc))
+        connection.destination.place_player(self)

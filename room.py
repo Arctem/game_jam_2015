@@ -16,6 +16,9 @@ class Room:
         player.set_room(self)
         #player.send_room_description()
 
+    def player_leave(self, player):
+        self.contents.remove(player)
+
     def add_content(self, item):
         self.contents.append(item)
         item.room = self

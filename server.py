@@ -33,28 +33,48 @@ def handle_message(client, player_data, msg, world):
             if len(args) == 0:
                 player.send_room_description()
             else:
+                looked_at = False
                 for obj in player.room.contents + player.room.connections:
                     if args.lower() in (obj.keywords if\
                         isinstance(obj, Connection) else obj.name.lower()):
+                        looked_at = True
                         player.sock.sendall(pickle.dumps(obj.description()))
+                if not looked_at:
+                    player.sock.sendall(pickle.dumps('There is no {} here.'
+                        .format(args)))
+        elif cmd == 'GO':
+            if len(args) == 0:
+                player.sock.sendall(pickle.dumps('Where do you want to go?'))
+            else:
+                for con in player.room.connections:
+                    if args.lower() in con.keywords:
+                        if con.locked:
+                            player.sock.sendall(pickle.dumps(con.locked_desc))
+                        else:
+                            player.move_through(con)
+                        break
 
 def create_world():
     world = World()
 
     barracks = Room('Barracks', 'the barracks',
-        'a barracks, cleaned with military efficiency.', possible_start=True)
+        'a barracks, cleaned with military efficiency.', ['barracks'],
+        possible_start=True)
     canteen = Room('Canteen', 'a canteen',
-        'a canteen, cleaned with civilian efficiency.', possible_start=True)
+        'a canteen, cleaned with civilian efficiency.', ['canteen'],
+        possible_start=True)
     barracks.add_content(Item("Ray's Gun", 'a small pistol',
-        'A gun with "Ray" embossed on the side.'))
+        'A gun with "Ray" embossed on the side.', ['pistol', 'gun', 'ray',
+        'ray gun']))
     canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
-        'A pile of assorted human bones.'))
-    barracks.add_connection(Connection(barracks, canteen, ('hall',),
-        'A hallway leading to the canteen.', 'a hallway',
-        'You walk through the hallway.'))
-    canteen.add_connection(Connection(canteen, barracks, ('hall',),
-        'A hallway leading to the barracks.', 'a hallway',
-        'You walk through the hallway.'))
+        'A pile of assorted human bones.', ['pile', 'skeleton', 'skeletons',
+        'bones']))
+    barracks.add_connection(Connection(barracks, canteen, 'a hallway',
+        'A hallway leading to the canteen.',
+        'You walk through the hallway.', ('hall',)))
+    canteen.add_connection(Connection(canteen, barracks, 'a hallway',
+        'A hallway leading to the barracks.',
+        'You walk through the hallway.', ('hall',)))
     world.add_room(barracks)
     world.add_room(canteen)
 
