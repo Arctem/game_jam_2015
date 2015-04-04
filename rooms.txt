@@ -1,9 +1,9 @@
 briefing = Room('Briefing Room', 'You are now in the briefing room.',
-	'This is the briefing room. There is a long table in the center, topped with a small chandelier. Along the table there are several nice chairs. Atop the table above every chair there is an up-to-date holopad ready for use in the next meeting.', possible_start=False)
+	'This is the briefing room. There is a long table in the center, topped with a small chandelier. Along the table there are several nice chairs. Atop the table above every chair there is an up-to-date holopad ready for use in the next meeting. To your right is a water cooler topped with a stack of empty cups. To your back there is a door that leads to the hallway.', possible_start=False)
 world.add_room(briefing)
 
 operations = Room('Operations Room', 'You are now in the operations room.',
-	'Just another boring room for boring people.', possible_start=False)
+	'The operations room is an interesting room. Scattered throughout are large tables, large holographic maps, and large-screened computers, all glowing a light blue. Everyone in the room is wearing blue. To your right is an unused computer.to your left there is a strange black machine that two people are working on. To your back there is a door to the hall. Straight in front of you, there is a bright yellow submarine.', possible_start=False)
 world.add_room(operations)
 
 quarters = Room('Quarters', 'You are now in your quarters.',
