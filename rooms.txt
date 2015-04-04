@@ -29,3 +29,23 @@ world.add_room(rec)
 prop = Room('propulsion room',
 	'Just another boring room for boring people.', possible_start=False)
 world.add_room(prop)
+
+brig = Room('Brig',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(brig)
+
+storage = Room('Storage Room',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(storage)
+
+hall1 = Room('First Floor Hall',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(operations)
+
+hall2 = Room('Second Floor Hall',
+	'Just another boring room for boring people.', possible_start=True)
+world.add_room(hall2)
+
+hall3 = Room('Third Floor Hall',
+	'Just another boring room for boring people.', possible_start=False)
+world.add_room(hall3)
