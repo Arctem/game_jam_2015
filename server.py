@@ -20,7 +20,7 @@ def handle_message(client, player_data, msg, world):
     if player is None:
         if valid_name(msg):
             player_data[client] = Player(client, msg)
-            client.sendall(pickle.dumps('Welcome, {}'.format(msg)))
+            client.sendall(pickle.dumps('Welcome, {}.'.format(msg)))
             world.add_player(player_data[client])
         else:
             client.sendall(pickle.dumps('Invalid username.'))
