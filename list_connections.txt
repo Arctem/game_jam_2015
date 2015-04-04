@@ -1,0 +1,33 @@
+grey_door_in;grey door:gray door:gray:grey;;There is a grey door.;This grey door leads to the operations room.;landing;ops;You walk up to the door. It opens automatically for you.;1;You walk up to the door. It does not open - the door to the operations room is locked to you.
+
+grey_door_out;grey door:gray door:grey:gray;;There is a white door;This white door leads back to the landing;ops;landing;You walk up to the door. It opens automatically for you and you walk through to the landing.;0;You walk up to the door. It does not open - the door to the hallway is locked!
+
+blue_door_in;blue door:blue;;There is a blue door.;This blue door leads to the briefing room and will open automatically for anyone allowed access.;landing;briefing;You walk up to the door and it slides open with a small swish.;0;The door stays shut as you walk to it. It is locked.
+
+blue_door_out;blue door:blue;;There is a blue door.;This blue door connects the landing and the briefing room, which you are currently in.;briefing;landing;You walk up to the door. It opens smoothly. You step through.;0;The door does not budge as you approach it. It is locked.
+
+red_stairs_down;red stairs:red:stairs:down stairs:down;;There is a set of red stairs leading down.;The red stairs lead down into the hall below.;landing;hall;You step down.;0;This should never be locked, because it's not a door.
+
+red_stairs_up;red stairs:red:up stairs;;There is a set of red stairs leading up.;The red stairs lead up to the landing.;hall;landing;You step up.;0;These stairs cannot possibly be locked.
+
+green_door_in;green door:green:greene door:greene;;There is a green door.;The green door leads to the shared crew quarters.;hall;quarters;You step through the door, which opens for you.;0;You can always go to your quarters
+
+green_door_out;green door:green:greene door:greene:door;;There is a green door.;The green door leads back into the hall.;quarters;hall;You step through the door.;0;You are locked in the crew quarters and the door isn't opening for you.
+
+yellow_door_in;yellow door:yellow;;There is a yellow door.;The yellow door leads to the crew rec room;hall;rec;You step through the door;0;You cannot access the rec room.
+
+yellow_door_out;yellow door:yellow:door;;There is a yellow door.;The yellow door leads to the hall.;rec;hall;You step through the door.;0;You cannot go through the hall.
+
+pink_door_in;pink door:pink;;There is a pink door.;The pink door goes to the cafeteria.;hall;cafe;You step through the door.;0;The cafe is locked. You are trapped forever.
+
+pink_door_out;pink door:pink;;There is a pink door.;The pink door goes back to the hallway.;cafe;hall;You step through the door.;0;The door is locked!  Oh noes!
+
+magenta_door_in;magenta door:magenta;There is a magenta door.;The magenta door has a signn above it that reads "Galley".;cafe;galley;You step through;1;The door is locked!
+
+magenta_door_out;magenta door:magenta:door;There is a magenta door.;The magenta door goes back to the cafe;galley;cafe;You step through;0;The door is locked! You are trapped!
+
+white_stairs_down;white stairs:white:down stairs;There is a set of white stairs leading down.;The stairs lead to the corridor;hall;corridor;You step through - you passed the redheaded CS major (OMG!). Sadly he doesn't complement your pants today;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
+
+white_stairs_up;white stairs:white:up stairs:stairs;There is a white staircase leading up.;The white staircase goes to the hall.;corridor;hall;You step through - no redheaded CS major in sight.;0;The stairs busted!
+
+
