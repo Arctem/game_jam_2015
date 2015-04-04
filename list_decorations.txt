@@ -1,0 +1,3 @@
+dining_table;dining table:table:table and chairs:tables:dining tables;;There are many dining tables and chairs around the room for people to eat at.;You look at a dining table. It is surrounded by chairs and is freshly cleaned.;cafeteria
+
+chandelier;chandelier:chandeliers;;Chandeliers hang on the ceiling, giving off an elegant mood to the room.;You look closely at one of the chandeliers. It is made of dozens of little crystals that reflect light off of small bulbs as well as candles.;cafeteria
