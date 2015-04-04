@@ -15,7 +15,7 @@ def valid_name(name, player_data):
     if ' ' in name:
         return False
     for k in player_data:
-        if player_data[k].name == name:
+        if player_data[k] and player_data[k].name == name:
             return False
     return True
 
