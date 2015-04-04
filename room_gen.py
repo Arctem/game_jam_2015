@@ -41,7 +41,7 @@ def main():
 
     #Item Additions
 
-	f = open('list_decs.txt', 'r')
+	f = open('list_items.txt', 'r')
     decs = f.read()
     decs = decs.split()
     for i in decs:
@@ -59,7 +59,7 @@ def main():
     
     #Connections Additions
 
-	f = open('list_decs.txt', 'r')
+	f = open('list_cons.txt', 'r')
     decs = f.read()
     decs = decs.split()
     for i in decs:
