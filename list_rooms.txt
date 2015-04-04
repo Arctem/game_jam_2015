@@ -16,7 +16,7 @@ hall;hall:second floor hall:second floor hallway;;You are in the hall.;You look 
 
 propulsion;propulsion:propulsion room;;This is the propulsion room.;You look around the propulsion room.;0
 
-hold;hold:prison:jail;You are in the hold.;;you look around the hold. There is a door to the corridor.;0
+brig;brig:prison:jail;You are in the brig.;;you look around the brig. There is a door to the corridor.;0
 
 rec;rec room:recreation room:rec:recreation;;This is the recreation room.;You look around.;1
 

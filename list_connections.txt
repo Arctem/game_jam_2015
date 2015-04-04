@@ -34,9 +34,9 @@ steel_door_in;steel door:steel;;There is a forboding steel door.;The steel door 
 
 steel_door_out;steel:door:steel door;;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;brig;corridor;You go through.;0;You're locked in, you traitor.
 
-double_door_in;double door:double;;There is a double door.;The double door is very large. It goes to the hold.;corridor;hold;You walk through.;1;You cannot access the hold.
+double_door_in;double door:double;;There is a double door.;The double door is very large. It goes to the brig.;corridor;brig;You walk through.;1;You cannot access the brig.
 
-double_door_out;double door:double;;There is a double door.;The double door is very large. It goes back to the corridor.;hold;corridor;You walk through.;0;You can't go back to the corridor.
+double_door_out;double door:double;;There is a double door.;The double door is very large. It goes back to the corridor.;brig;corridor;You walk through.;0;You can't go back to the corridor.
 
 khaki_door_in;khaki door:khaki;;There is a khaki door.;The khaki door is pretty and goes to the sick bay.;corridor;sickbay;You walk through.;0;You can't access sick bay.
 
