@@ -1,6 +1,6 @@
 class Connection:
-    def __init__(self, origin, destination, keywords, desc, short_desc,
-            pass_desc, attributes=[], locked=False, locked_desc=None):
+    def __init__(self, origin, destination, short_desc, desc, pass_desc,
+            keywords, attributes=[], locked=False, locked_desc=None):
         self.origin = origin
         self.destination = destination
         self.keywords = keywords
