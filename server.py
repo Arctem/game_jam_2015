@@ -107,7 +107,7 @@ def create_world():
     for i in rooms:
         if i and i[0] != '#':
             name, keyword, attribute, short_desc, description, possible_start = i.split(';')
-            print (i)
+            #print (i)
             keyword = keyword.split(':')
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
@@ -166,9 +166,9 @@ def create_world():
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
             if locked == 0:
-                    locked = False
+                locked = False
             else:
-                    locked = True
+                locked = True
             for s in world.rooms:
                 if source in s.keywords:
                     for d in world.rooms:
