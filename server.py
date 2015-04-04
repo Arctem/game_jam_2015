@@ -57,6 +57,9 @@ def handle_message(client, player_data, msg, world):
                         break
                 if not went:
                     player.sock.sendall("Can't go {}.".format(args))
+        elif cmd == 'SAY':
+            player.inform_others('{} says "{}".'.format(player.name, args))
+            player.sock.sendall(pickle.dumps('You say "{}".'.format(args)))
 
 def create_world():
     world = World()
