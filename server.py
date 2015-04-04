@@ -65,7 +65,7 @@ def handle_message(client, player_data, msg, world):
 def create_world():
     world = World()
 
-    barracks = Room('Barracks', 'the barracks',
+    """"barracks = Room('Barracks', 'the barracks',
         'a barracks, cleaned with military efficiency.', ['barracks'],
         possible_start=True)
     canteen = Room('Canteen', 'a canteen',
@@ -84,7 +84,7 @@ def create_world():
         'A hallway leading to the barracks.',
         'You walk through the hallway.', ('hall',)))
     world.add_room(barracks)
-    world.add_room(canteen)
+    world.add_room(canteen)"""
 
     #Room Additions #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;possible_start
     f = open('list_rooms.txt', 'r')
@@ -92,44 +92,43 @@ def create_world():
     rooms = rooms.split('\n')
     for i in rooms:
         if i and i[0] != '#':
-            """name, keyword, attribute, short_desc, description, possible_start = i.split(';')"""
+            name, keyword, attribute, short_desc, description, possible_start = i.split(';')
             print (i)
-            """keyword = keyword.split(':')
+            keyword = keyword.split(':')
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
-            if possible_start == 0:
+            if possible_start == "0":
                     possible_start = False
             else:
                     possible_start = True
-            world.add_room(Room(name, short_desc, description,keyword,attribute, possible_start))"""
+            world.add_room(Room(name, short_desc, description,keyword,attribute, possible_start))
     f.close()
  
-    """
+    
     #Decoration Additions
     #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;room
 
     f = open('list_decorations.txt', 'r')
     decs = f.read()
-    decs = decs.split()
+    decs = decs.split('\n')
     for i in decs:
-        if i[0] != '#':
+        if i and i[0] != '#':
             name, keyword, attribute, short_desc, description, room = i.split(';');
-            print (name)
             keyword = keyword.split(':')
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
             for r in world.rooms:
                 if room in r.keywords:
-                    r.add_content(decoration(name, keyword,attribute,short_desc, description))
+                    r.add_content(Decoration(name, keyword,attribute,short_desc, description))
                     break
     f.close()
-
+    
     #Item Additions
     f = open('list_items.txt', 'r')
     decs = f.read()
     decs = decs.split()
     for i in decs:
-        if i[0] != '#':
+        if i and i[0] != '#':
             name, keyword, attribute, short_desc, description, room = i.split(';');
             print (name)
             keyword = keyword.split(':')
@@ -137,7 +136,7 @@ def create_world():
             attribute = list(map(lambda a: a.split(',', 1), attribute))
             for r in world.rooms:
                 if room in r.keywords:
-                    r.add_content(item(name, keyword,attribute,short_desc, description))
+                    r.add_content(Item(name, keyword,attribute,short_desc, description))
                     break
     f.close()
     
@@ -147,9 +146,8 @@ def create_world():
     decs = f.read()
     decs = decs.split()
     for i in decs:
-        if i[0] != '#':
+        if i and i[0] != '#':
             name, keyword, attribute, short_desc, description, source, destination, pass_desc, locked, locked_desc = room.split(';');
-            print (name)
             keyword = keyword.split(':')
             attribute = attribute.split(':')
             attribute = list(map(lambda a: a.split(',', 1), attribute))
@@ -161,9 +159,9 @@ def create_world():
                 if source in s.keywords:
                     for d in s.keywords:
                         if destination in d.keywords:
-                            s.add_connection(connection(s,d, short_desc, description, pass_desc, keyword,attribute, locked))
+                            s.add_connection(Connection(s,d, short_desc, description, pass_desc, keyword,attribute, locked))
                             break
-    f.close()"""
+    f.close()
     
     return world
 
