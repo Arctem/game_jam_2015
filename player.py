@@ -1,6 +1,8 @@
 import pickle
 
+from item import Item
 import kill_strings
+
 
 class Player:
     def __init__(self, sock, name, world, clothes=None):
@@ -55,15 +57,40 @@ class Player:
         self.send_msg(connection.pass_desc)
         connection.destination.place_player(self)
 
+    def gather_actions(self):
+        actions = {}
+        for item in self.inventory:
+            print(item)
+            print(item.attributes)
+            for attr in item.attributes:
+                actions.update(attr.commands)
+
+        return actions
+
+    def take_item(self, args):
+        for item in filter(lambda c: not isinstance(c, Player), self.room.contents):
+            if args in item.keywords:
+                if isinstance(item, Item):
+                    self.send_msg('You pick up {}.'.format(item.name))
+                    self.inform_others('{} picks up {}.'.format(self.name,
+                        item.name))
+                    self.room.remove_item(item)
+                    self.inventory.append(item)
+                    item.player = self
+                else:
+                    self.send_msg("You can't take {}.".format(item.name))
+                    self.inform_others('{} looks at {}, then shakes their head sadly.'
+                        .format(self.name, item.name))
+
     def kill(self, method):
-        self.inform_others(other_msg[method].format(name=self.name))
+        self.inform_others(kill_strings.other_msg[method].format(name=self.name))
         for item in self.inventory:
             self.inform_others('{} drops {}.'.format(self.name, item.short_desc))
             self.room.add_content(item)
             self.item.player = None
         self.inventory = []
 
-        self.send_msg(self_msg[method])
+        self.send_msg(kill_strings.self_msg[method])
 
         self.set_room(self.world.get_random_spawn())
 

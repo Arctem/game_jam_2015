@@ -1,6 +1,7 @@
 import random
 
 from special.clone import ClonePod
+from attribute.clonebay import CloneBay
 
 class World:
     def __init__(self):
@@ -17,6 +18,6 @@ class World:
         self.rooms.append(room)
 
     def get_random_spawn(self):
-        spawns = list(filter(lambda r: self.room.contains(ClonePod)
+        spawns = list(filter(lambda r: r.contains(CloneBay)
             ,self.rooms))
         return random.choice(spawns)

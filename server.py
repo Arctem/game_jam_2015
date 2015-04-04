@@ -3,6 +3,7 @@ import socket
 import sys
 import pickle
 
+from attribute.weapon import RangedWeapon
 from connection import Connection
 from decoration import Decoration
 from special.clone import ClonePod
@@ -64,6 +65,14 @@ def handle_message(client, player_data, msg, world):
         elif cmd == 'SAY':
             player.inform_others('{} says "{}".'.format(player.name, args))
             player.send_msg('You say "{}".'.format(args))
+        elif cmd == 'TAKE':
+            player.take_item(args)
+        else:
+            extras = player.gather_actions()
+            if cmd in extras:
+                extras[cmd](player, args)
+            else:
+                player.send_msg("You can't {} here.".format(cmd))
 
 def create_world():
     world = World()
@@ -76,7 +85,7 @@ def create_world():
         possible_start=True)
     barracks.add_content(Item("Ray's Gun", 'a small pistol',
         'A gun with "Ray" embossed on the side.', ['pistol', 'gun', 'ray',
-        'ray gun']))
+        'ray gun'], [RangedWeapon()]))
     canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
         'A pile of assorted human bones.', ['pile', 'skeleton', 'skeletons',
         'bones']))

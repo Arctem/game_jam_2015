@@ -23,6 +23,10 @@ class Room:
         self.contents.append(item)
         item.room = self
 
+    def remove_item(self, item):
+        item.room = None
+        self.contents.remove(item)
+
     def contains(self, obj):
         if isinstance(obj, Attribute):
             for i in self.room.contents:
@@ -44,3 +48,11 @@ class Room:
 
     def description(self):
         return self.desc
+
+    def contains(self, obj):
+        if isinstance(self, obj):
+            return True
+        for a in self.attributes:
+            if isinstance(self, obj):
+                return True
+        return False
