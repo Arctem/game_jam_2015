@@ -107,7 +107,7 @@ def create_world():
     #Decoration Additions
     #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;room
 
-	f = open('list_decs.txt', 'r')
+	f = open('list_decorations.txt', 'r')
     decs = f.read()
     decs = decs.split()
     for i in decs:
@@ -143,7 +143,7 @@ def create_world():
     
     #Connections Additions
 
-	f = open('list_cons.txt', 'r')
+	f = open('list_connections.txt', 'r')
     decs = f.read()
     decs = decs.split()
     for i in decs:
