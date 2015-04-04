@@ -1,6 +1,6 @@
-operations;operations:operations room:ops room:ops;;You are in the ops room.;You look around. The operations room of Vessel XIV is fully stocked with the latest technologies. Holographic displays cut across sections of the room. People in the corner of the room debate different tactics. Behind you is a door to the landing.;0
+operations;operations:operations room:ops room:ops;;You are in the ops room.;You look around. The operations room of Vessel XIV is fully stocked with the latest technologies. Holographic displays cut across sections of the room. People in the corner of the room debate different tactics.;0
 
-briefing;briefing:briefing room:brief;;This is the briefing room;You look around. The briefing room is brightly lit. There is little in this room, other than bare essentials, to keep people from being distracted. Behind you is a door to the landing.;0
+briefing;briefing:briefing room:brief;;This is the briefing room;You look around. The briefing room is brightly lit. There is little in this room, other than bare essentials, to keep people from being distracted.;0
 
 landing;landing:first floor hallway:first floor hall;;You are in the landing of the vessel.;The landing is very bare, but brightly lit. Lights line the walls on each side. To your left there is a door to the ops room. To your right there is a door to the briefing room. To the stern of the ship is a staircase leading to the hall.;0
 
