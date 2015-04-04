@@ -169,12 +169,20 @@ def create_world():
                 locked = False
             else:
                 locked = True
+
+            src = None
+            dest = None
             for s in world.rooms:
                 if source in s.keywords:
-                    for d in world.rooms:
-                        if destination in d.keywords:
-                            s.add_connection(Connection(s,d, short_desc, description, pass_desc, keyword,attribute, locked))
-                            break
+                    src = s
+            for d in world.rooms:
+                if destination in d.keywords:
+                    dest = d
+            print(source, destination)
+            assert src
+            assert dest
+            s.add_connection(Connection(src, dest, short_desc, description,
+                pass_desc, keyword, attribute, locked))
     f.close()
     
     return world
