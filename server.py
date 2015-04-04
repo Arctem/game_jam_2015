@@ -11,16 +11,19 @@ from room import Room
 from player import Player
 from world import World
 
-def valid_name(name):
+def valid_name(name, player_data):
     if ' ' in name:
         return False
+    for k in player_data:
+        if player_data[k].name == name:
+            return False
     return True
 
 def handle_message(client, player_data, msg, world):
     player = player_data[client]
     if player is None:
-        if valid_name(msg):
-            player_data[client] = Player(client, msg)
+        if valid_name(msg, player_data):
+            player_data[client] = Player(client, msg, world)
             client.sendall(pickle.dumps('Welcome, {}.'.format(msg)))
             world.add_player(player_data[client])
         else:
