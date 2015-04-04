@@ -1,6 +1,0 @@
-Room:
-name;keyword:keyword:...:keyword;short_desc;description;possible_start
-
-Possible_start should be 1 if true, 0 if false, or something else similarly convenient
-Any line starting with a # will be ignored, allowing for comments.
-No room should have the same keyword to avoid ambiguity.
