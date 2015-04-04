@@ -40,4 +40,8 @@ double_door_out;double door:double;;There is a double door.;The double door is v
 
 khaki_door_in;khaki door:khaki;;There is a khaki door.;The khaki door is pretty and goes to the sick bay.;corridor;sickbay;You walk through.;0;You can't access sick bay.
 
-khaki_door_out;khaki door:khaki;;There is a khaki door.;The khaki door is pretty, it leads to the corridor.;sickbay;corridor;You wakl through.;0;You cannot leave the sick bay at this time.
+khaki_door_out;khaki door:khaki:door;;There is a khaki door.;The khaki door is pretty, it leads to the corridor.;sickbay;corridor;You wakl through.;0;You cannot leave the sick bay at this time.
+
+iron_door_in;iron door:iron;;There is an iron door.;The iron door is a bit intimidating but also very industrial. It leads to propulsion.;corridor;propulsion;This the propulsion room. It's propulsion-y.;1;You can't go in there.
+
+iron_door_out;iron door:iron;;There is an iron door.;The iron door will bring you back to the corridor.;propulsion;corridor;The propulsion room is very industrial.;0;You are locked in!
