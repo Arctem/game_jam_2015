@@ -1,10 +1,12 @@
 import pickle
 
 class Room:
-    def __init__(self, name, short_desc, desc, possible_start=False):
+    def __init__(self, name, short_desc, desc, keywords, attributes=[], possible_start=False):
         self.name = name
         self.short_desc = short_desc
         self.desc = desc
+        self.keywords = keywords
+        self.attributes = attributes
         self.possible_start = possible_start
         self.connections = []
         self.contents = []
