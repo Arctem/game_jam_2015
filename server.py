@@ -3,6 +3,8 @@ import socket
 import sys
 import pickle
 
+from decoration import Decoration
+from item import Item
 from room import Room
 from player import Player
 from world import World
@@ -13,7 +15,8 @@ def valid_name(name):
     return True
 
 def handle_message(client, player_data, msg, world):
-    if player_data[client] is None:
+    player = player_data[client]
+    if player is None:
         if valid_name(msg):
             player_data[client] = Player(client, msg)
             client.sendall(pickle.dumps('Welcome, {}'.format(msg)))
@@ -21,13 +24,31 @@ def handle_message(client, player_data, msg, world):
         else:
             client.sendall(pickle.dumps('Invalid username.'))
             client.sendall(pickle.dumps('What is your name?'))
+    else:
+        cmd = msg.split(' ')[0]
+        args = ' '.join(msg.split(' ')[1:])
+        cmd = cmd.upper()
+        if cmd == 'LOOK':
+            if len(args) == 0:
+                player.send_room_description()
+            else:
+                for obj in player.room.contents + player.room.connections:
+                    if args.lower() in obj.name.lower():
+                        player.sock.sendall(pickle.dumps(obj.description()))
 
 def create_world():
     world = World()
 
-    barracks = Room('Barracks',
+    barracks = Room('Barracks', 'the barracks',
         'a barracks, cleaned with military efficiency.', possible_start=True)
+    canteen = Room('Canteen', 'a canteen',
+        'a canteen, cleaned with civilian efficiency.', possible_start=True)
+    barracks.add_content(Item("Ray's Gun", 'a small pistol',
+        'A gun with "Ray" embossed on the side.'))
+    canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
+        'A pile of assorted human bones.'))
     world.add_room(barracks)
+    world.add_room(canteen)
 
     return world
 
