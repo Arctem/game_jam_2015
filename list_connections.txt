@@ -22,12 +22,22 @@ pink_door_in;pink door:pink;;There is a pink door.;The pink door goes to the caf
 
 pink_door_out;pink door:pink;;There is a pink door.;The pink door goes back to the hallway.;cafe;hall;You step through the door.;0;The door is locked!  Oh noes!
 
-magenta_door_in;magenta door:magenta;There is a magenta door.;The magenta door has a signn above it that reads "Galley".;cafe;galley;You step through;1;The door is locked!
+magenta_door_in;magenta door:magenta;;There is a magenta door.;The magenta door has a signn above it that reads "Galley".;cafe;galley;You step through;1;The door is locked!
 
-magenta_door_out;magenta door:magenta:door;There is a magenta door.;The magenta door goes back to the cafe;galley;cafe;You step through;0;The door is locked! You are trapped!
+magenta_door_out;magenta door:magenta;:door;There is a magenta door.;The magenta door goes back to the cafe;galley;cafe;You step through;0;The door is locked! You are trapped!
 
-white_stairs_down;white stairs:white:down stairs;There is a set of white stairs leading down.;The stairs lead to the corridor;hall;corridor;You step through - you passed the redheaded CS major (OMG!). Sadly he doesn't complement your pants today;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
+white_stairs_down;white stairs:white:down stairs;;There is a set of white stairs leading down.;The stairs lead to the corridor;hall;corridor;You step through - you passed the redheaded CS major (OMG!). Sadly he doesn't complement your pants today;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
 
-white_stairs_up;white stairs:white:up stairs:stairs;There is a white staircase leading up.;The white staircase goes to the hall.;corridor;hall;You step through - no redheaded CS major in sight.;0;The stairs busted!
+white_stairs_up;white stairs:white:up stairs:stairs;;There is a white staircase leading up.;The white staircase goes to the hall.;corridor;hall;You step through - no redheaded CS major in sight.;0;The stairs busted!
 
+steel_door_in;steel door:steel;;There is a forboding steel door.;The steel door sends a chill down your spine when you look at it closely. This leads to the brig.;corridor;brig;You step through.;1;You cannot enter.
 
+steel_door_out;steel:door:steel door;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;0;You're locked in, you traitor.
+
+double_door_in;double door:double;;There is a double door.;The double door is very large. It goes to the hold.;corridor;hold;You walk through.;1;You cannot access the hold.
+
+double_door_out;double door:double;;There is a double door.;The double door is very large. It goes back to the corridor.;hold;corridor;You walk through.;0;You can't go back to the corridor.
+
+khaki_door_in;khaki door:khaki;;There is a khaki door.;The khaki door is pretty and goes to the sick bay.;corridor;sickbay;You walk through.;0;You can't access sick bay.
+
+khaki_door_out;khaki door:khaki;;There is a khaki door.;The khaki door is pretty, it leads to the corridor.;sickbay;corridor;You wakl through.;0;You cannot leave the sick bay at this time.
