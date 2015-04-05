@@ -48,6 +48,7 @@ class World:
                 print('Server tick {}.'.format(self.tick_count))
                 self.handle_respawns()
                 self.give_missions()
+                self.handle_missions()
                 print('Server tick {} ending.'.format(self.tick_count))
 
     def handle_respawns(self):
@@ -62,3 +63,9 @@ class World:
         for p in filter(lambda c: isinstance(c, Player), briefing.contents):
             if not p.mission:
                 p.give_mission(Mission(p, self))
+
+    def handle_missions(self):
+        for p in self.players:
+            if p.mission and p.mission.check_done():
+                p.mission.complete()
+                p.mission = None

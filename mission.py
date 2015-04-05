@@ -16,4 +16,8 @@ class Mission:
         self.player.send_msg(open('dialog.txt', 'r').read().strip().format(room.name))
 
     def check_done(self):
-        return self.target.shot
+        return self.target.attributes[0].shot
+
+    def complete(self):
+        self.player.send_msg('A voice echoes from above.\n"You did it! Thanks bro."')
+        self.target.room.remove_item(self.target)

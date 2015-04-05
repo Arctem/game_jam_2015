@@ -1,4 +1,5 @@
 from attribute.attribute import Attribute
+from decoration import Decoration
 from player import Player
 
 class Weapon(Attribute):
@@ -14,7 +15,7 @@ class RangedWeapon(Weapon):
         if len(args) == 0:
             player.send_msg('What would you like to shoot?')
         else:
-            targets = list(filter(lambda c: RangedWeapon.valid_target,
+            targets = list(filter(lambda c: RangedWeapon.valid_target(c, args),
                 player.room.contents))
             if len(targets) == 1:
                 target = targets[0]
@@ -24,14 +25,19 @@ class RangedWeapon(Weapon):
                     targets[0].send_msg('{} shoots you!'.format(player.name))
                     targets[0].kill('shot')
                 else:
-                    target.shoot(player, self)
+                    for attr in target.attributes:
+                        if isinstance(attr, Shootable):
+                            attr.shoot(player, self)
+            else:
+                print('Wrong number of targets: {}.'.format(targets))
 
-    def valid_target(item):
-        if isinstance(item, Player) and c.name.lower() == args.lower():
+    def valid_target(item, args):
+        if isinstance(item, Player) and item.name.lower() == args.lower():
             return True
         elif isinstance(item, Decoration):
+            print(args, item, item.attributes)
             for attr in item.attributes:
-                if isinstance(attr, Shootable) and args.lower in item.keywords:
+                if isinstance(attr, Shootable) and args.lower() in item.keywords:
                     return True
         else:
             return False
@@ -47,5 +53,6 @@ class Shootable(Attribute):
 
     def shoot(self, shooter, weapon):
         self.shot = True
+        shooter.send_msg('You shoot {}.'.format(self.parent.name))
         shooter.inform_others('{} shot {}.'.format(shooter.name,
             self.parent.name))
