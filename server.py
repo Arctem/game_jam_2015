@@ -78,111 +78,90 @@ def handle_message(client, player_data, msg, world):
 def create_world():
     world = World()
 
-    """"barracks = Room('Barracks', 'the barracks',
-        'a barracks, cleaned with military efficiency.', ['barracks'],
-        possible_start=True)
-    canteen = Room('Canteen', 'a canteen',
-        'a canteen, cleaned with civilian efficiency.', ['canteen'],
-        possible_start=True)
-    barracks.add_content(Item("Ray's Gun", 'a small pistol',
-        'A gun with "Ray" embossed on the side.', ['pistol', 'gun', 'ray',
-        'ray gun'], [RangedWeapon()]))
-    canteen.add_content(Decoration('Skeletons', 'a pile of spooky skeletons',
-        'A pile of assorted human bones.', ['pile', 'skeleton', 'skeletons',
-        'bones']))
-    canteen.add_content(ClonePod())
-    barracks.add_connection(Connection(barracks, canteen, 'a hallway',
-        'A hallway leading to the canteen.',
-        'You walk through the hallway.', ('hall',)))
-    canteen.add_connection(Connection(canteen, barracks, 'a hallway',
-        'A hallway leading to the barracks.',
-        'You walk through the hallway.', ('hall',)))
-    world.add_room(barracks)
-    world.add_room(canteen)"""
-
-    #Room Additions #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;possible_start
-    f = open('list_rooms.txt', 'r')
-    rooms = f.read()
-    rooms = rooms.split('\n')
-    for i in rooms:
-        if i and i[0] != '#':
-            name, keyword, attribute, short_desc, description, possible_start = i.split(';')
-            #print (i)
-            keyword = keyword.split(':')
-            attribute = attribute.split(':')
-            attribute = list(map(lambda a: a.split(',', 1), attribute))
-            if possible_start == "0":
-                    possible_start = False
-            else:
-                    possible_start = True
-            world.add_room(Room(name, short_desc, description,keyword,attribute, possible_start))
-    f.close()
- 
+    #Room Loading
+    #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;possible_start
+    with open('list_rooms.txt', 'r') as f:
+        rooms = f.read()
+        rooms = rooms.split('\n')
+        for i in rooms:
+            if i and i[0] != '#':
+                name, keyword, attribute, short_desc, description,\
+                    possible_start = i.split(';')
+                #print (i)
+                keyword = keyword.split(':')
+                attribute = attribute.split(':')
+                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if possible_start == "0":
+                        possible_start = False
+                else:
+                        possible_start = True
+                world.add_room(Room(name, short_desc, description, keyword,
+                    attribute, possible_start)) 
     
-    #Decoration Additions
+    #Decoration Loading
     #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;room
-
-    f = open('list_decorations.txt', 'r')
-    decs = f.read()
-    decs = decs.split('\n')
-    for i in decs:
-        if i and i[0] != '#':
-            name, keyword, attribute, short_desc, description, room = i.split(';');
-            keyword = keyword.split(':')
-            attribute = attribute.split(':')
-            attribute = list(map(lambda a: a.split(',', 1), attribute))
-            for r in world.rooms:
-                if room in r.keywords:
-                    r.add_content(Decoration(name, keyword,attribute,short_desc, description))
-                    break
-    f.close()
+    with open('list_decorations.txt', 'r') as f:
+        decs = f.read()
+        decs = decs.split('\n')
+        for i in decs:
+            if i and i[0] != '#':
+                name, keyword, attribute, short_desc, description, room\
+                    = i.split(';');
+                keyword = keyword.split(':')
+                attribute = attribute.split(':')
+                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                for r in world.rooms:
+                    if room in r.keywords:
+                        r.add_content(Decoration(name, keyword, attribute,
+                            short_desc, description))
+                        break
     
-    #Item Additions
-    f = open('list_items.txt', 'r')
-    decs = f.read()
-    decs = decs.split('\n')
-    for i in decs:
-        if i and i[0] != '#':
-            name, keyword, attribute, short_desc, description, room = i.split(';');
-            print (name)
-            keyword = keyword.split(':')
-            attribute = attribute.split(':')
-            attribute = list(map(lambda a: a.split(',', 1), attribute))
-            for r in world.rooms:
-                if room in r.keywords:
-                    r.add_content(Item(name, keyword,attribute,short_desc, description))
-                    break
-    f.close()
+    #Item Loading
+    with open('list_items.txt', 'r') as f:
+        decs = f.read()
+        decs = decs.split('\n')
+        for i in decs:
+            if i and i[0] != '#':
+                name, keyword, attribute, short_desc, description, room\
+                    = i.split(';');
+                print (name)
+                keyword = keyword.split(':')
+                attribute = attribute.split(':')
+                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                for r in world.rooms:
+                    if room in r.keywords:
+                        r.add_content(Item(name, keyword, attribute, short_desc,
+                            description))
+                        break
     
-    #Connections Additions
+    #Connection Loading
+    with open('list_connections.txt', 'r') as f:
+        decs = f.read()
+        decs = decs.split('\n')
+        for i in decs:
+            if i and i[0] != '#':
+                name, keyword, attribute, short_desc, description, source,\
+                    destination, pass_desc, locked, locked_desc = i.split(';')
+                keyword = keyword.split(':')
+                attribute = attribute.split(':')
+                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if locked == 0:
+                    locked = False
+                else:
+                    locked = True
 
-    f = open('list_connections.txt', 'r')
-    decs = f.read()
-    decs = decs.split('\n')
-    for i in decs:
-        if i and i[0] != '#':
-            name, keyword, attribute, short_desc, description, source, destination, pass_desc, locked, locked_desc = i.split(';');
-            keyword = keyword.split(':')
-            attribute = attribute.split(':')
-            attribute = list(map(lambda a: a.split(',', 1), attribute))
-            if locked == 0:
-                locked = False
-            else:
-                locked = True
-
-            src = None
-            dest = None
-            for s in world.rooms:
-                if source in s.keywords:
-                    src = s
-            for d in world.rooms:
-                if destination in d.keywords:
-                    dest = d
-            assert src, '{} is not a room.'.format(source)
-            assert dest, '{} is not a room.'.format(destination)
-            s.add_connection(Connection(src, dest, short_desc, description,
-                pass_desc, keyword, attribute, locked))
-    f.close()
+                src = None
+                dest = None
+                for s in world.rooms:
+                    if source in s.keywords:
+                        src = s
+                for d in world.rooms:
+                    if destination in d.keywords:
+                        dest = d
+                assert src, '{} is not a room.'.format(source)
+                assert dest, '{} is not a room.'.format(destination)
+                s.add_connection(Connection(src, dest, short_desc, description,
+                    pass_desc, keyword, attribute, locked))
     
     return world
 
