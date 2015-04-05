@@ -97,7 +97,7 @@ def create_world():
                 attribute = attribute.split(':')
                 attribute = list(map(lambda a: a.split(',', 1), attribute))
                 if possible_start == "0":
-                        possible_start = False
+                        possible_start = False#change to false to enable locking
                 else:
                         possible_start = True
                 world.add_room(Room(name, short_desc, description, keyword,
@@ -151,9 +151,9 @@ def create_world():
                 attribute = attribute.split(':')
                 attribute = list(map(lambda a: a.split(',', 1), attribute))
                 if locked == '0':
-                    locked = False
+                    locked = False#Set false to enable locking
                 else:
-                    locked = True
+                    locked = False#Set true to enable locking
 
                 src = None
                 dest = None
