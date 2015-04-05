@@ -4,6 +4,8 @@ class Item:
         self.short_desc = short_desc
         self.keywords = keywords
         self.attributes = attributes
+        for attr in self.attributes:
+            attr.parent = self
         self.desc = desc
         self.room = None
         self.player = None
