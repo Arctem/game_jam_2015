@@ -115,8 +115,8 @@ def create_world():
                 attribute = list(map(lambda a: a.split(',', 1), attribute))
                 for r in world.rooms:
                     if room in r.keywords:
-                        r.add_content(Decoration(name, keyword, attribute,
-                            short_desc, description))
+                        r.add_content(Decoration(name, attribute, short_desc,
+                            description, keyword))
                         break
     
     #Item Loading
@@ -133,8 +133,8 @@ def create_world():
                 attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
-                        r.add_content(Item(name, keyword, attribute, short_desc,
-                            description))
+                        r.add_content(Item(name, attribute, short_desc,
+                            description, keyword))
                         break
     
     #Connection Loading
