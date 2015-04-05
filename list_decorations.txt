@@ -1,7 +1,7 @@
 #operations room
 holo_table;table:holotable:holo table:holo:holograph;;a large table displaying a holographic view of a random city; The holographic table is a large metal table that contains a green holograph. It is showing some form of battle between two unknown sides.;operations
 
-red_head;red head:cs major:red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you then compliments your pants. You are to intimidated by him to talk to him.;operations
+red_head;red head:cs major:red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you and compliments your pants. You are tot intimidated by him to talk to him.;operations
 
 window;window:glass;;a large glass window showing a beach;As you look closely at the glass window you realize that the window is a moving picture. You forgot what the outside of your vessel really looks like.;operations
 
