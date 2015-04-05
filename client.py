@@ -44,6 +44,7 @@ def main():
 
 
     window = tk.Tk()
+    window.wm_title('Vessel XIV')
 
     text_out = ScrolledText(window, state='disabled', takefocus=0)
     #text_out.configure(state='disabled')
