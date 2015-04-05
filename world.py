@@ -37,5 +37,10 @@ class World:
             with self.lock:
                 self.tick_count += 1
                 print('Server tick {}.'.format(self.tick_count))
-                #do stuff, probably
+                self.handle_respawns()
                 print('Server tick {} ending.'.format(self.tick_count))
+
+    def handle_respawns(self):
+        for p in self.players:
+            if not p.room:
+                self.get_random_spawn().place_player(p)

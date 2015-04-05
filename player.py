@@ -29,9 +29,10 @@ class Player:
         if self.room:
             self.inform_others('{} has left the room.'.format(self.name))
         self.room = room
-        self.send_msg('You find yourself in {}.'
-            .format(room.short_description()))
-        self.inform_others('{} has entered the room.'.format(self.name))
+        if self.room:
+            self.send_msg('You find yourself in {}.'
+                .format(room.short_description()))
+            self.inform_others('{} has entered the room.'.format(self.name))
 
     def inform_others(self, msg):
         for person in filter(lambda c: isinstance(c, Player) and c is not self,
@@ -117,7 +118,7 @@ class Player:
 
         self.send_msg(kill_strings.self_msg[method])
 
-        self.set_room(self.world.get_random_spawn())
+        self.set_room(None)
 
     def send_msg(self, msg):
         self.sock.sendall(pickle.dumps(msg))
