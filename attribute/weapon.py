@@ -6,7 +6,7 @@ class Weapon(Attribute):
         Attribute.__init__(self)
 
 class RangedWeapon(Weapon):
-    def __init__(self):
+    def __init__(self, args):
         Weapon.__init__(self)
         self.commands['SHOOT'] = self.shoot
 
@@ -25,5 +25,5 @@ class RangedWeapon(Weapon):
 
 
 class MeleeWeapon(Weapon):
-    def __init__(self):
+    def __init__(self, args):
         Weapon.__init__(self)

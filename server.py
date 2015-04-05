@@ -3,6 +3,7 @@ import socket
 import sys
 import pickle
 
+from attribute import create_attribute
 from attribute.weapon import RangedWeapon
 from connection import Connection
 from decoration import Decoration
@@ -129,7 +130,7 @@ def create_world():
                 print (name)
                 keyword = keyword.split(':')
                 attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Item(name, keyword, attribute, short_desc,
