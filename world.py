@@ -43,4 +43,6 @@ class World:
     def handle_respawns(self):
         for p in self.players:
             if not p.room:
-                self.get_random_spawn().place_player(p)
+                self.get_random_spawn().place_player(p,
+                    arrival='You schlop out of the cloning vat in the {}, fresh and new.',
+                    to_others="{}'s new clone slides smoothly from the cloning vat.")
