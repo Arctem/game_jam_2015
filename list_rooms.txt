@@ -2,7 +2,7 @@ the operations room;operations:operations room:ops room:ops;;the operations room
 
 the briefing room;briefing:briefing room:brief;;the briefing room;The room is brightly lit and freshly cleaned. There is little to distract people in the middle of a meeting.;0
 
-the landing;landing:first floor hallway:first floor hall;;the top floor hallway;This hall is very bare, but brightly lit and spacious.;0
+the landing;landing;;the top floor hallway;This hall is very bare, but brightly lit and spacious.;0
 
 the cafeteria;cafeteria:cafe;;the cafeteria;It is a very large room, fit to feed half of the people in Vessel XIV at the same time.;1
 
@@ -12,7 +12,7 @@ the quarters;quarters:quarter:dorms:dorm;;the shared crew quarters;This room is 
 
 the sick bay;sick bay:sickbay:hospital;;the sick bay;The room is a bit humid and has the slight aftertaste of illness.;0
 
-hall;hall:second floor hall:second floor hallway;;the second floor hallway;This hall is brightly lit and spacious. It has the occasional potted plant on the ceiling for decoration.;1
+hall;hall;;the second floor hallway;This hall is brightly lit and spacious. It has the occasional potted plant on the ceiling for decoration.;1
 
 the propulsion room;propulsion:propulsion room;;the propulsion room;This room is very warm because of the large engines. It has a very old-age industrial type of feel to it.;0
 
@@ -22,4 +22,4 @@ the hold;hold:cargo hold;;the cargo hold;This is a very large room used for stor
 
 the recreation room;rec room:recreation room:rec:recreation;;the recreation room;The recreation room is a bit cool and has a comfortable, homey feel to put the crew at ease.;1
 
-corridor;corridor:third floor hall:third floor hallway;;the lowest hallway;This hallway is brightly lit and is the widest hallway aboard this vessel so as to accomidate cargo shipments.;0
+corridor;corridor;;the lowest hallway;This hallway is brightly lit and is the widest hallway aboard this vessel so as to accomidate cargo shipments.;0
