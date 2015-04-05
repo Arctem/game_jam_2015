@@ -1,47 +1,47 @@
-grey_door_in;grey door:gray door:gray:grey;;There is a grey door.;This grey door leads to the operations room.;landing;ops;You walk up to the door. It opens automatically for you.;1;You walk up to the door. It does not open - the door to the operations room is locked to you.
+grey_door_in;grey door:gray door:gray:grey;;a grey door;This is a slightly curved electrical grey door. To the left of the door is a small sign that says "OPS".;landing;ops;You walk up to the door. It opens automatically for you. You walk through.;1;You walk up to the door. It does not open on its own.
 
-grey_door_out;grey door:gray door:grey:gray;;There is a white door;This white door leads back to the landing;ops;landing;You walk up to the door. It opens automatically for you and you walk through to the landing.;0;You walk up to the door. It does not open - the door to the hallway is locked!
+grey_door_out;grey door:gray door:grey:gray;;a grey door;This is a slightly curved electrical grey door.;ops;landing;You walk up to the door. It opens automatically for you. You walk through.;0;You walk up to the door. It does not open on its own.
 
-blue_door_in;blue door:blue;;There is a blue door.;This blue door leads to the briefing room and will open automatically for anyone allowed access.;landing;briefing;You walk up to the door and it slides open with a small swish.;0;The door stays shut as you walk to it. It is locked.
+blue_door_in;blue door:blue;;a blue door;This is a straight, polished blue door. To the left of the door is a small sign that says "BRIEFING";landing;briefing;You walk up to the door. It slides open with a slight swish. You walk through.;0;You walk up to the door, but it stays sealed shut.
 
-blue_door_out;blue door:blue;;There is a blue door.;This blue door connects the landing and the briefing room, which you are currently in.;briefing;landing;You walk up to the door. It opens smoothly. You step through.;0;The door does not budge as you approach it. It is locked.
+blue_door_out;blue door:blue;;a blue door;This is a straight, polished blue door.;briefing;landing;You walk up to the door. It slides open with a slight swish. You step through.;0;You walk up to the door, but it stays sealed shut.
 
-red_stairs_down;red stairs:red:stairs:down stairs:down;;There is a set of red stairs leading down.;The red stairs lead down into the hall below.;landing;hall;You step down.;0;This should never be locked, because it's not a door.
+red_stairs_down;red stairs:red:stairs:down stairs:down;;a set of red stairs leading downward;These are clean, shiny red steps that lead down to the floor below.;landing;hall;You step down.;0;This should never be locked, because it's not a door.
 
-red_stairs_up;red stairs:red:up stairs;;There is a set of red stairs leading up.;The red stairs lead up to the landing.;hall;landing;You step up.;0;These stairs cannot possibly be locked.
+red_stairs_up;red stairs:red:up stairs;;a set of red stairs leading upward;These are clean, shiny red steps thaat lead down to the floor below.;hall;landing;You step up.;0;These stairs cannot possibly be locked.
 
-green_door_in;green door:green:greene door:greene;;There is a green door.;The green door leads to the shared crew quarters.;hall;quarters;You step through the door, which opens for you.;0;You can always go to your quarters
+green_door_in;green door:green:greene door:greene;;a green door;This is a slightly shabby, old-fashioned green door with a door knob. Above it a sign says "CREW QUARTERS".;hall;quarters;You open the door with the handle. It feels strange to have to do so in a modern vessel such as this. You go through.;0;You can always go to your quarters.
 
-green_door_out;green door:green:greene door:greene:door;;There is a green door.;The green door leads back into the hall.;quarters;hall;You step through the door.;0;You are locked in the crew quarters and the door isn't opening for you.
+green_door_out;green door:green:greene door:greene:door;;a green door;This is a slightly shabby, old-fashioned green door with a door knob.;quarters;hall;You open the door with the handle - a move you still find strange in this modern vessel. You go through.;0;You are locked in the crew quarters and the door isn't opening for you.
 
-yellow_door_in;yellow door:yellow;;There is a yellow door.;The yellow door leads to the crew rec room;hall;rec;You step through the door;0;You cannot access the rec room.
+yellow_door_in;yellow door:yellow;;a yellow door;This is a bright and friendly-looking yellow door. Above the door is a sign that says "REC ROOM".;hall;rec;You move near the door and it opens automatically with an audible snap. You walk through.;0;You move near the door and it does not react or open on its own.
 
-yellow_door_out;yellow door:yellow:door;;There is a yellow door.;The yellow door leads to the hall.;rec;hall;You step through the door.;0;You cannot go through the hall.
+yellow_door_out;yellow door:yellow:door;;a yellow door;This is a bright and friendly-looking yellow door.;rec;hall;You go near the door and it opens automatically with an audible snap. You walk through.;0;You cannot go through the hall.
 
-pink_door_in;pink door:pink;;There is a pink door.;The pink door goes to the cafeteria.;hall;cafe;You step through the door.;0;The cafe is locked. You are trapped forever.
+pink_door_in;pink door:pink;;a pink door;This is a somewhat faded but still modern pink door. Above the door, a sign reads "CAFETERIA".;hall;cafe;You near the door and it opens with a noticeable creak. You walk through.;0;You near the door and it does nothing.
 
-pink_door_out;pink door:pink;;There is a pink door.;The pink door goes back to the hallway.;cafe;hall;You step through the door.;0;The door is locked!  Oh noes!
+pink_door_out;pink door:pink;;a pink door;This is a somewhat faded but still modern pink door.;cafe;hall;You near the door and it opens with a noticeable creak.;0;You near the door and it does nothing.
 
-magenta_door_in;magenta door:magenta;;There is a magenta door.;The magenta door has a signn above it that reads "Galley".;cafe;galley;You step through;1;The door is locked!
+magenta_door_in;magenta door:magenta;;a magenta door;This is a notable magenta door with the words "GALLEY" and "PUSH" engraved into its metal.;cafe;galley;You near the door and push it open. You walk through.;1;You near the door and push. It does not budge.
 
-magenta_door_out;magenta door:magenta:door;;There is a magenta door.;The magenta door goes back to the cafe;galley;cafe;You step through;0;The door is locked! You are trapped!
+magenta_door_out;magenta door:magenta:door;a magenta door;This is a notable magenta door with the word "PUSH" egraved into its metal.;galley;cafe;You near the door and push it open. You walk through.;0;You near the door and push. It does not budge.
 
-white_stairs_down;white stairs:white:down stairs;;There is a set of white stairs leading down.;The stairs lead to the corridor;hall;corridor;You step through - you passed the redheaded CS major (OMG!). Sadly he doesn't complement your pants today;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
+white_stairs_down;white stairs:white:down stairs;;a set of white stairs leading downward;These are glimmering and clean white stairs leading down to a lower level.;hall;corridor;You step down.;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
 
-white_stairs_up;white stairs:white:up stairs:stairs;;There is a white staircase leading up.;The white staircase goes to the hall.;corridor;hall;You step through - no redheaded CS major in sight.;0;The stairs busted!
+white_stairs_up;white stairs:white:up stairs:stairs;;a set of white stais leading upward;The white staircase goes to the hall.;corridor;hall;You step up.;0;For some reason you can't go up the stairs.
 
-steel_door_in;steel door:steel;;There is a forboding steel door.;The steel door sends a chill down your spine when you look at it closely. This leads to the brig.;corridor;brig;You step through.;1;You cannot enter.
+steel_door_in;steel door:steel;;a steel door;The steel door sends a chill down your spine when you look at it closely. Above it a sign reads "BRIG".;corridor;brig;You near the door. A click sounds and the door opens slightly. You catch the door in your hand and slip inside. A guard closes the door behind you. The door clicks once more.;1;You near the door. Nothing happens.
 
-steel_door_out;steel:door:steel door;;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;brig;corridor;You go through.;0;You're locked in, you traitor.
+steel_door_out;steel:door:steel door;;There is a forboding, barred steel door.;The door is even eerier on the inside of this room than it ever was on the outside.;brig;corridor;You near the door. A click sounds and the door opens slightly. You push it open the rest of the way and slip through. The guard closes the door behind you.;0;You near the door. The guard jumps in your way and will not let you pass.
 
-double_door_in;double door:double;;There is a double door.;The double door is very large. It goes to the brig.;corridor;brig;You walk through.;1;You cannot access the brig.
+double_door_in;double doors:double door:double;;a set of large double doors;The double doors are very overly large. Above them a large sign reads "CARGO HOLD".;corridor;hold;You near the double doors. They swoop wide open enough for a cargo shipment to pass through. You walk through the excessively large doors.;1;You near the doors. Nothing happens.
 
-double_door_out;double door:double;;There is a double door.;The double door is very large. It goes back to the corridor.;brig;corridor;You walk through.;0;You can't go back to the corridor.
+double_door_out;double door:double;;a large set of double doors;The double doorsare very overly large.;hold;corridor;You near the double doors. They swoop wide open enough for a cargo shipment to pass through. You walk through the excessively large doors.;1;You near the double doors. Nothing happens.
 
-khaki_door_in;khaki door:khaki;;There is a khaki door.;The khaki door is pretty and goes to the sick bay.;corridor;sickbay;You walk through.;0;You can't access sick bay.
+khaki_door_in;khaki door:khaki;;a khaki door;The khaki door has a nicer-than-normal sign on it that says "SICK BAY".;corridor;sickbay;You near the door and it opens for you. You walk through.;0;You near the door but nothing happens.
 
-khaki_door_out;khaki door:khaki:door;;There is a khaki door.;The khaki door is pretty, it leads to the corridor.;sickbay;corridor;You wakl through.;0;You cannot leave the sick bay at this time.
+khaki_door_out;khaki door:khaki:door;;a khaki door;The khaki door is rather sterile-looking.;sickbay;corridor;You near the door and it opens for you. You walk through.;0;You near the door but nothing happens.
 
-iron_door_in;iron door:iron;;There is an iron door.;The iron door is a bit intimidating but also very industrial. It leads to propulsion.;corridor;propulsion;This the propulsion room. It's propulsion-y.;1;You can't go in there.
+iron_door_in;iron door:iron;;an iron door;The iron door is a bit intimidating and industrial. A sign above it reads "PROPULSION".;corridor;propulsion;You near the door and it clicks and slides open. You go through.;1;You near the door and nothing happens.
 
-iron_door_out;iron door:iron;;There is an iron door.;The iron door will bring you back to the corridor.;propulsion;corridor;The propulsion room is very industrial.;0;You are locked in!
+iron_door_out;iron door:iron;;an iron door;The iron door is a bit intimidating and industrial.;propulsion;corridor;You near the door and it clicks and slides open. You go through;0;You near the door and nothing happens.
