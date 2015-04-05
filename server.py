@@ -101,8 +101,8 @@ def create_world():
                 else:
                         possible_start = True
                 world.add_room(Room(name, short_desc, description, keyword,
-                    attribute, possible_start)) 
-    
+                    attribute, possible_start))
+
     #Decoration Loading
     #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;room
     with open('list_decorations.txt', 'r') as f:
@@ -119,7 +119,7 @@ def create_world():
                         r.add_content(Decoration(name, short_desc, description,
                             keyword, attribute))
                         break
-    
+
     #Item Loading
     with open('list_items.txt', 'r') as f:
         decs = f.read()
@@ -136,7 +136,7 @@ def create_world():
                         r.add_content(Item(name, short_desc, description,
                             keyword, attribute))
                         break
-    
+
     #Connection Loading
     with open('list_connections.txt', 'r') as f:
         decs = f.read()
@@ -164,7 +164,7 @@ def create_world():
                 assert dest, '{} is not a room.'.format(destination)
                 src.add_connection(Connection(src, dest, short_desc, description,
                     pass_desc, keyword, attribute, locked, locked_desc))
-    
+
     return world
 
 def main():
@@ -187,7 +187,7 @@ def main():
         print('Socket now listening.')
         while running:
             input_ready, output_ready, except_ready = select.select(clients, [], [])
-            
+
             with world.lock:
                 for s in input_ready:
                     if s == server:

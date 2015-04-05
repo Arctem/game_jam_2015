@@ -30,4 +30,3 @@ class Stowaway(Person, Shootable):
 
     def help(player):
         player.send_msg('You helped.')
-

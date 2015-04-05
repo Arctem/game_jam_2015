@@ -72,11 +72,11 @@ class Player:
             print(item.attributes)
             for attr in item.attributes:
                 actions.update(attr.commands)
-            
+
         for decoration in filter(lambda d: isinstance(d, Decoration), self.room.contents):
             for attr in decoration.attributes:
                 actions.update(attr.commands)
-            
+
         return actions
 
     def take_item(self, args):
