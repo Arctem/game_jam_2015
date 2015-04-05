@@ -18,4 +18,7 @@ class Stowaway(Person):
             targets = list(filter(lambda c: isinstance(c, Decoration) and 
                 c.name.lower() == args.lower(), player.room.contents))
             if len(targets) == 1:
-                player.send_msg('"Please don\'t hurt me," the hostage begged."I want to help you," you say, still unsure if you want to help him or dispose of him. You were ordered to get rid of him as he is an evil man, but you also are wary of elimination life.')
+                player.send_msg('"Please don\'t hurt me," the hostage begged."I want to help you," you say, still unsure if you want to HELP him or dispose of him. You were ordered to get ELIMINATE him as he is an evil man, but you also are wary of elimination life.')
+                self.commands['ELIMINATE'] = self.eliminate
+                self.commands['HELP'] = self.help
+                
