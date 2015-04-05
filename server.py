@@ -71,6 +71,8 @@ def handle_message(client, player_data, msg, world):
             player.send_msg('You say "{}".'.format(args))
         elif cmd == 'TAKE':
             player.take_item(args)
+        elif cmd == 'DROP':
+            player.drop_item(args)
         else:
             extras = player.gather_actions()
             if cmd in extras:

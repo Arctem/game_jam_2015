@@ -38,5 +38,5 @@ class World:
             with self.lock:
                 self.tick_count += 1
                 print('Server tick {}.'.format(self.tick_count))
-                time.sleep(3)
+                #do stuff, probably
                 print('Server tick {} ending.'.format(self.tick_count))
