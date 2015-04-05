@@ -1,7 +1,7 @@
 #operations room
 holo_table;table:holotable:holo table:holo:holograph;;a large table displaying a holographic view of a random city; The holographic table is a large metal table that contains a green holograph. It is showing some form of battle between two unknown sides.;operations
 
-red_head;red head:cs major:red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you and compliments your pants. You are tot intimidated by him to talk to him.;operations
+red_head;red head:cs major:red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you and compliments your pants. You are too intimidated by him to talk to him.;operations
 
 window;window:glass;;a large glass window showing a beach;As you look closely at the glass window you realize that the window is a moving picture. You forgot what the outside of your vessel really looks like.;operations
 
@@ -27,7 +27,7 @@ cooking_area;cooking:area:cooking area;;a cooking area;As you look around the co
 your_bed;bed;;your bed;This is your bed. There is nothing special about it but the smell;quarters
 
 #sick bay
-clone_bay;clone:bay:clone bay;clone_bay;a clone bay;The clone bay looks vaguely familiar, like you were born there or something.;sickbay
+clone_bay;clone:bay:clone bay;clone_bay;a clone bay;This clone bay looks vaguely familiar, like you were born here or something. Inside the vats you can see small shapes wriggling inside the ooze.;sickbay
 
 #hall
 #No decorations right now
