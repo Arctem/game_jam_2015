@@ -7,6 +7,7 @@ from attribute import create_attribute
 from attribute.weapon import RangedWeapon
 from connection import Connection
 from decoration import Decoration
+from attribute.stowaway import Stowaway
 from special.clone import ClonePod
 from item import Item
 from room import Room
