@@ -1,1 +1,3 @@
 Ray's Gun;gun:pistol:ray gun:ray's gun;ranged_weapon;a small pistol;A small laser gun with "Ray" embossed on the side.;dorm
+
+important data;data:important data:holopad:pad;;an important-looking holopad;A holopad that seems like it holds some very important data from operations.;ops
