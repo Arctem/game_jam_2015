@@ -107,7 +107,7 @@ class Player:
         for item in self.inventory:
             self.inform_others('{} drops {}.'.format(self.name, item.short_desc))
             self.room.add_content(item)
-            self.item.player = None
+            item.player = None
         self.inventory = []
 
         self.send_msg(kill_strings.self_msg[method])
