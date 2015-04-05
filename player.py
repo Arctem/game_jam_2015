@@ -43,7 +43,7 @@ class Player:
             room = self.room.name
             desc = self.room.description()
             msg.append('You are in {}.'.format(room))
-            msg.append(' {}.'.format(desc))
+            msg.append('{}'.format(desc))
             for obj in self.room.contents:
                 if obj is not self:
                     msg.append('There is {}.'.format(obj.short_description()))

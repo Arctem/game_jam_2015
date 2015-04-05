@@ -26,7 +26,9 @@ def handle_message(client, player_data, msg, world):
         if valid_name(msg, player_data):
             player_data[client] = Player(client, msg, world)
             client.sendall(pickle.dumps('Welcome, {}.'.format(msg)))
-            client.sendall(pickle.dumps('This is Vessel XIV. Please report to the briefing room.'.format(msg)))
+            client.sendall(pickle.dumps(
+                'This is Vessel XIV. Please report to the briefing room.'
+                .format(msg)))
             world.add_player(player_data[client])
         else:
             client.sendall(pickle.dumps('Invalid username.'))
@@ -160,7 +162,7 @@ def create_world():
                         dest = d
                 assert src, '{} is not a room.'.format(source)
                 assert dest, '{} is not a room.'.format(destination)
-                s.add_connection(Connection(src, dest, short_desc, description,
+                src.add_connection(Connection(src, dest, short_desc, description,
                     pass_desc, keyword, attribute, locked))
     
     return world
