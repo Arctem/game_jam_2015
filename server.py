@@ -58,7 +58,6 @@ def handle_message(client, player_data, msg, world):
                 for con in player.room.connections:
                     if args.lower() in con.keywords:
                         if con.locked:
-                            pass
                             player.send_msg(con.locked_desc)
                         else:
                             player.move_through(con)
