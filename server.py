@@ -163,7 +163,7 @@ def create_world():
                 assert src, '{} is not a room.'.format(source)
                 assert dest, '{} is not a room.'.format(destination)
                 src.add_connection(Connection(src, dest, short_desc, description,
-                    pass_desc, keyword, attribute, locked))
+                    pass_desc, keyword, attribute, locked, locked_desc))
     
     return world
 
