@@ -3,7 +3,6 @@ import threading
 from threading import Lock
 import time
 
-from special.clone import ClonePod
 from attribute.clonebay import CloneBay
 
 class World:
