@@ -36,14 +36,9 @@ class RangedWeapon(Weapon):
         else:
             return False
 
-
-
-
 class MeleeWeapon(Weapon):
     def __init__(self, args):
         Weapon.__init__(self)
-
-
 
 class Shootable(Attribute):
     def __init__(self):
