@@ -95,18 +95,14 @@ def create_world():
                     possible_start = i.split(';')
                 #print (i)
                 keyword = keyword.split(':')
-                if len(attribute) is 0:
-                    attribute = []
-                else:
-                    attribute = attribute.split(':')
-                    attribute = list(map(create_attribute, attribute))
+                attribute = create_attribute(attribute)
                 if possible_start == "0":
                         possible_start = False#change to false to enable locking
                 else:
                         possible_start = True
                 world.add_room(Room(name, short_desc, description, keyword,
-                    attribute, possible_start)) 
-    
+                    attribute, possible_start))
+
     #Decoration Loading
     #name;keyword:keyword:...:keyword;attribute:attribute;short_desc;description;room
     with open('list_decorations.txt', 'r') as f:
@@ -117,17 +113,13 @@ def create_world():
                 name, keyword, attribute, short_desc, description, room\
                     = i.split(';');
                 keyword = keyword.split(':')
-                if len(attribute) is 0:
-                    attribute = []
-                else:
-                    attribute = attribute.split(':')
-                    attribute = list(map(create_attribute, attribute))
+                attribute = create_attribute(attribute)
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Decoration(name, short_desc, description,
                             keyword, attribute))
                         break
-    
+
     #Item Loading
     with open('list_items.txt', 'r') as f:
         decs = f.read()
@@ -138,17 +130,13 @@ def create_world():
                     = i.split(';');
 
                 keyword = keyword.split(':')
-                if len(attribute) is 0:
-                    attribute = []
-                else:
-                    attribute = attribute.split(':')
-                    attribute = list(map(create_attribute, attribute))
+                attribute = create_attribute(attribute)
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Item(name, short_desc, description,
                             keyword, attribute))
                         break
-    
+
     #Connection Loading
     with open('list_connections.txt', 'r') as f:
         decs = f.read()
@@ -158,11 +146,7 @@ def create_world():
                 name, keyword, attribute, short_desc, description, source,\
                     destination, pass_desc, locked, locked_desc = i.split(';')
                 keyword = keyword.split(':')
-                if len(attribute) is 0:
-                    attribute = []
-                else:
-                    attribute = attribute.split(':')
-                    attribute = list(map(create_attribute, attribute))
+                attribute = create_attribute(attribute)
                 if locked == '0':
                     locked = False#Set false to enable locking
                 else:
@@ -180,7 +164,7 @@ def create_world():
                 assert dest, '{} is not a room.'.format(destination)
                 src.add_connection(Connection(src, dest, short_desc, description,
                     pass_desc, keyword, attribute, locked, locked_desc))
-    
+
     return world
 
 def main():
@@ -203,7 +187,7 @@ def main():
         print('Socket now listening.')
         while running:
             input_ready, output_ready, except_ready = select.select(clients, [], [])
-            
+
             with world.lock:
                 for s in input_ready:
                     if s == server:

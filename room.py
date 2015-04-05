@@ -12,6 +12,8 @@ class Room:
         self.desc = desc
         self.keywords = keywords
         self.attributes = attributes
+        for attr in self.attributes:
+            attr.parent = self
         self.possible_start = possible_start
         self.connections = []
         self.contents = []

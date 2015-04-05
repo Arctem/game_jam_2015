@@ -8,6 +8,8 @@ class Connection:
         self.short_desc = short_desc
         self.pass_desc = pass_desc
         self.attributes = attributes
+        for attr in self.attributes:
+            attr.parent = self
         self.locked = locked
         self.locked_desc = locked_desc
 
