@@ -1,23 +1,23 @@
-operations;operations:operations room:ops room:ops;;You are in the ops room.;You look around. The operations room of Vessel XIV is fully stocked with the latest technologies. Holographic displays cut across sections of the room. People in the corner of the room debate different tactics.;0
+the operations room;operations:operations room:ops room:ops;;the operations room;This room is very crowded and loud, full of people bickering and debating about different strategies.;0
 
-briefing;briefing:briefing room:brief;;This is the briefing room;You look around. The briefing room is brightly lit. There is little in this room, other than bare essentials, to keep people from being distracted.;0
+the briefing room;briefing:briefing room:brief;;the briefing room;The room is brightly lit and freshly cleaned. There is little to distract people in the middle of a meeting.;0
 
-landing;landing:first floor hallway:first floor hall;;You are in the landing of the vessel.;The landing is very bare, but brightly lit. Lights line the walls on each side.;0
+the landing;landing:first floor hallway:first floor hall;;the top floor hallway;This hall is very bare, but brightly lit and spacious.;0
 
-cafeteria;cafeteria:cafe;This is the cafeteria;;The cafeteria is a very large room. It is fit to feed half of the people in Vessel XIV at the same time.;1
+the cafeteria;cafeteria:cafe;;the cafeteria;It is a very large room, fit to feed half of the people in Vessel XIV at the same time.;1
 
-galley;galley:kitchen;;This is the galley, or the kitchen.;This is a dimly lit room, full of chefs and cooking stuffs. This galley feeds the entire Vessel's people. There is a white door that leads to the cafeteria.;0
+the galley;galley:kitchen;;the galley;This is a dimly lit room. It's amazing that this one room feeds all of the crew.;0
 
-quarters;quarters:quarter:dorms:dorm:my room:room:my quarters;;Here are your quarters.;You look around. This is your room.;1
+the quarters;quarters:quarter:dorms:dorm;;the shared crew quarters;This room is equipped for holding the majority of the crew. It is a large but cramped room.;1
 
-sickbay;sick bay:sickbay:hospital;;This is the sick bay.;You look around, seeing people laying in beds, recovering from some illness or exhaustion. There is a door to the hallway.;0
+the sick bay;sick bay:sickbay:hospital;;the sick bay;The room is a bit humid and has the slight aftertaste of illness.;0
 
-hall;hall:second floor hall:second floor hallway;;You are in the hall.;You look around. The hall is well lit and spacious, able to accomodate passerby traffic easily. Towards the bow is a staircase to the corridor. To the far left is a door to the cafeteria. To the far right is a door to your quarters. To the near left is a door to the recreation room. To the stern is a staircase that leads to the landing.;1
+hall;hall:second floor hall:second floor hallway;;the second floor hallway;This hall is brightly lit and spacious. It has the occasional potted plant on the ceiling for decoration.;1
 
-propulsion;propulsion:propulsion room;;This is the propulsion room.;You look around the propulsion room.;0
+the propulsion room;propulsion:propulsion room;;the propulsion room;This room is very warm because of the large engines. It has a very old-age industrial type of feel to it.;0
 
-brig;brig:prison:jail;You are in the brig.;;you look around the brig. There is a door to the corridor.;0
+the brig;brig:prison:jail;;the brig;This is an eery looking room. It's a bit dark and it has bars blocking you from the prisoners.;0
 
-rec;rec room:recreation room:rec:recreation;;This is the recreation room.;You look around.;1
+the recreation room;rec room:recreation room:rec:recreation;;the recreation room;The recreation room is a bit cool and has a comfortable, homey feel to put the crew at ease.;1
 
-corridor;corridor:third floor hall:third floor hallway;;This is the lower corridor of Vessel XIV.;You look around.;0
+corridor;corridor:third floor hall:third floor hallway;;the lowest hallway;This hallway is brightly lit and is the widest hallway aboard this vessel so as to accomidate cargo shipments.;0
