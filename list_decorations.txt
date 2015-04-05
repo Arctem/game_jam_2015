@@ -1,7 +1,7 @@
 #operations room
-holo_table;table:holotable:holo table:holo:holograph;;a large table displaying a holographic view of a random city; The holographic table is a large metal table that contains a green holograph. It is showing some form of battle between two unknown sides.;operations
+holo_table;table:holotable:a holo table:holo:holograph;;a large table displaying a holographic view of a random city; The holographic table is a large metal table that contains a green holograph. It is showing some form of battle between two unknown sides.;operations
 
-red_head;red head:cs major:red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you then compliments your pants. You are to intimidated by him to talk to him.;operations
+red_head;red head:cs major:a red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you then compliments your pants. You are too intimidated by him to talk to him. Maybe you should go to his German friend for help...;operations
 
 window;window:glass;;a large glass window showing a beach;As you look closely at the glass window you realize that the window is a moving picture. You forgot what the outside of your vessel really looks like.;operations
 
@@ -9,6 +9,8 @@ control_panel;control:pannel::panel:control panel;;a small control panel; The co
 
 #briefing room
 conference_table;table:conference table;;a boring conference table;The table is just a table. There is scattered paperwork but nothing interesting.;brief
+
+holovision;holovision:tv:television:holo;;a holo on the wall;The holo is a holovision that will be used in meeting and briefings. It glows a slight light blue when it's not in use.;brief
 
 #landing
 security_camera;security:camera:security camera:cam;;a security camera;You look up towards the security camera. It gives you the creeps. "keep moving," a robotic voice says from the camera;landing
@@ -19,7 +21,6 @@ stain;stain;;a stain in the middle of the floor;You look at the stain. It has be
 dining_table;dining table:table:table and chairs:tables:dining tables;; a set of dining tables and chairs around the room for people to eat at.;You look at a dining table. It is surrounded by chairs and is freshly cleaned.;cafeteria
 
 chandelier;chandelier:chandeliers;; a set of chandeliers hanging on the ceiling, giving off an elegant mood to the room.;You look closely at one of the chandeliers. It is made of dozens of little crystals that reflect light off of small bulbs as well as candles. They give off enough light to make the cafeteria have some light;cafeteria
-
 #galley
 cooking_area;cooking:area:cooking area;;a cooking area;As you look around the cooking area you see a bunch of equipment you have no idea how to use.;galley
 
@@ -39,4 +40,6 @@ propulsion_engine;propulsion:engine:propulsion engine;;a propulsion engine;The p
 prisoner;prisoner;;a prisoner;As you look at the prisoner, you ask why he is in the brig. He mumbles something about saying he could ride someone. You slowly back away;brig
 
 #rec
-weights;weights:weight;;some weights;There are some weights that you can use to exercise.;recreation
+weights;weights:weight;;a set of weights;There are some weights that you can use to exercise.;recreation
+
+pool;pool:pool table:billiards:billiard:billiard table;;a billiard table;There is a billiard (also known as pool) table for the crew to play while they relax.;rec
