@@ -22,6 +22,7 @@ chandelier;chandelier:chandeliers;; a set of chandeliers hanging on the ceiling,
 
 #galley
 cooking_area;cooking:area:cooking area;;a cooking area;As you look around the cooking area you see a bunch of equipment you have no idea how to use.;galley
+stowaway;stowaway:person;;an out of place person;This person doesn't look like they belong here. Maybe you should do something;galley
 
 #quarters
 your_bed;bed;;your bed;This is your bed. There is nothing special about it but the smell;quarters
