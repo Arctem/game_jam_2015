@@ -25,7 +25,7 @@ class RangedWeapon(Weapon):
     def valid_target(item, args):
         if isinstance(item, Player) and c.name.lower() == args.lower():
             return True
-        elif:
+        elif isinstance(item, Decoration):
             for attr in item.attributes:
                 if isinstance(attr, Shootable) and args.lower in item.keywords:
                     return True

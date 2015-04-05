@@ -10,7 +10,7 @@ class Person(Attribute):
 class Stowaway(Person, Shootable):
     def __init__(self, args):
         Person.__init__(self)
-        Shootable.__init__(self, parent)
+        Shootable.__init__(self)
 
         self.commands['INTERROGATE'] = self.interrogate
 
