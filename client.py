@@ -4,10 +4,11 @@ import socket
 import pickle
 import threading
 
-def evaluate_in(event):
+def evaluate_in(event, text_in, text_out):
     text = text_in.get()
     print(text)
     sock.sendall(pickle.dumps(text))
+    write_to(text_out, text.upper())
     text_in.delete(0, tk.END)
 
 def socket_thread(sock, text_out):
@@ -49,7 +50,7 @@ def main():
     text_out.pack()
 
     text_in = tk.Entry(window, takefocus=1)
-    text_in.bind("<Return>", evaluate_in)
+    text_in.bind("<Return>", lambda e: evaluate_in(e, text_in, text_out))
     text_in.pack()
 
 
