@@ -25,14 +25,18 @@ class Player:
             msg.append('They are completely naked.')
         return ' '.join(msg)
 
-    def set_room(self, room):
+    def set_room(self, room, leaving=None, arrival=None, to_others=None):
+        leaving = leaving or '{} has left the room.'
+        arrival = arrival or 'You find yourself in {}.'
+        to_others = to_others or '{} has entered the room.'
+
         if self.room:
-            self.inform_others('{} has left the room.'.format(self.name))
+            self.inform_others(leaving.format(self.name))
         self.room = room
         if self.room:
-            self.send_msg('You find yourself in {}.'
+            self.send_msg(arrival
                 .format(room.short_description()))
-            self.inform_others('{} has entered the room.'.format(self.name))
+            self.inform_others(to_others.format(self.name))
 
     def inform_others(self, msg):
         for person in filter(lambda c: isinstance(c, Player) and c is not self,
@@ -118,6 +122,7 @@ class Player:
 
         self.send_msg(kill_strings.self_msg[method])
 
+        self.room.player_leave(self)
         self.set_room(None)
 
     def send_msg(self, msg):

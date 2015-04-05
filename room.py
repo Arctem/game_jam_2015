@@ -16,9 +16,9 @@ class Room:
         self.connections = []
         self.contents = []
 
-    def place_player(self, player):
+    def place_player(self, player, leaving=None, arrival=None, to_others=None):
         self.contents.append(player)
-        player.set_room(self)
+        player.set_room(self, leaving, arrival, to_others)
         #player.send_room_description()
 
     def player_leave(self, player):
