@@ -1,6 +1,7 @@
 import pickle
 
 from item import Item
+from decoration import Decoration
 import kill_strings
 
 
@@ -66,7 +67,11 @@ class Player:
             print(item.attributes)
             for attr in item.attributes:
                 actions.update(attr.commands)
-
+            
+        for decoration in filter(lambda d: isinstance(d, Decoration), self.room.contents):
+            for attr in decoration.attributes:
+                actions.update(attr.commands)
+            
         return actions
 
     def take_item(self, args):
@@ -84,12 +89,30 @@ class Player:
                     self.inform_others('{} looks at {}, then shakes their head sadly.'
                         .format(self.name, item.name))
 
+    def drop_item(self, args):
+        possibles = list(filter(lambda i: args in i.keywords, self.inventory))
+        if len(possibles) == 1:
+            item = possibles[0]
+            self.send_msg('You drop {}.'.format(item.name))
+            self.inform_others('{} drops {}.'.format(self.name, item.name))
+            item.player = None
+            self.inventory.remove(item)
+            self.room.add_content(item)
+        elif len(possibles) == 0:
+            self.send_msg("You don't have a {} to drop.".format(args))
+            self.inform_others("{} searches their pockets, then looks dejected."
+                .format(self.name))
+        else:
+            self.send_msg("You have multiple items by that name! Try a " +
+                "different keyword.")
+
+
     def kill(self, method):
         self.inform_others(kill_strings.other_msg[method].format(name=self.name))
         for item in self.inventory:
             self.inform_others('{} drops {}.'.format(self.name, item.short_desc))
             self.room.add_content(item)
-            self.item.player = None
+            item.player = None
         self.inventory = []
 
         self.send_msg(kill_strings.self_msg[method])

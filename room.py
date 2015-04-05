@@ -1,5 +1,10 @@
 import pickle
 
+from attribute.attribute import Attribute
+from decoration import Decoration
+from item import Item
+from player import Player
+
 class Room:
     def __init__(self, name, short_desc, desc, keywords, attributes=[], possible_start=False):
         self.name = name
@@ -28,15 +33,19 @@ class Room:
         self.contents.remove(item)
 
     def contains(self, obj):
-        if isinstance(obj, Attribute):
-            for i in self.room.contents:
+        if issubclass(obj, Attribute):
+            for a in self.attributes:
+                if isinstance(self, obj):
+                    return True
+
+            for i in filter(lambda c: not isinstance(c, Player), self.contents):
                 for j in i.attributes:
                     if isinstance(j, obj):
-                        return False
-        elif isinstance(obj, Decoration) or isinstance(obj, Item):
-            for i in self.room.contents:
+                        return True
+        elif issubclass(obj, Decoration) or issubclass(obj, Item):
+            for i in self.contents:
                 if isinstance(i, obj):
-                    return False
+                    return True
         else:
             return False
 
@@ -48,11 +57,3 @@ class Room:
 
     def description(self):
         return self.desc
-
-    def contains(self, obj):
-        if isinstance(self, obj):
-            return True
-        for a in self.attributes:
-            if isinstance(self, obj):
-                return True
-        return False

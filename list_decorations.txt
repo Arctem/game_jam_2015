@@ -1,7 +1,7 @@
 #operations room
 holo_table;table:holotable:a holo table:holo:holograph;;a large table displaying a holographic view of a random city; The holographic table is a large metal table that contains a green holograph. It is showing some form of battle between two unknown sides.;operations
 
-red_head;red head:cs major:a red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man;When you look at the tall red headed cs major he smiles at you then compliments your pants. You are too intimidated by him to talk to him. Maybe you should go to his German friend for help...;operations
+red_head;red head:cs major:a red headed cs major:tyler:cecil:tyler cecil;;a tall red headed cs major who you think is a hunk of a man.;When you look at the tall red headed cs major he smiles at you then compliments your pants. You are too intimidated by him to talk to him. Maybe you should go to his German friend for help...;operations
 
 window;window:glass;;a large glass window showing a beach;As you look closely at the glass window you realize that the window is a moving picture. You forgot what the outside of your vessel really looks like.;operations
 
@@ -23,12 +23,13 @@ dining_table;dining table:table:table and chairs:tables:dining tables;; a set of
 chandelier;chandelier:chandeliers;; a set of chandeliers hanging on the ceiling, giving off an elegant mood to the room.;You look closely at one of the chandeliers. It is made of dozens of little crystals that reflect light off of small bulbs as well as candles. They give off enough light to make the cafeteria have some light;cafeteria
 #galley
 cooking_area;cooking:area:cooking area;;a cooking area;As you look around the cooking area you see a bunch of equipment you have no idea how to use.;galley
+stowaway;stowaway:person;stowaway;an out of place person;This person doesn't look like they belong here. Maybe you should do something;galley
 
 #quarters
 your_bed;bed;;your bed;This is your bed. There is nothing special about it but the smell;quarters
 
 #sick bay
-clone_bay;clone:bay:clone bay;clone_bay;a clone bay;The clone bay looks vaguely familiar, like you were born there or something.;sickbay
+clone_bay;clone:bay:clone bay;clone_bay;a clone bay;This clone bay looks vaguely familiar, like you were born here or something. Inside the vats you can see small shapes wriggling inside the ooze.;sickbay
 
 #hall
 #No decorations right now
