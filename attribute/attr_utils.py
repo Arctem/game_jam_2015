@@ -1,10 +1,12 @@
 from attribute.weapon import RangedWeapon, MeleeWeapon
 from attribute.clonebay import CloneBay
+from attribute.stowaway import Stowaway
 
 attr_lookup = {
     'ranged_weapon': RangedWeapon,
     'melee_weapon': MeleeWeapon,
     'clone_bay': CloneBay,
+    'stowaway' : Stowaway,
 }
 
 def create_attribute(attr):
