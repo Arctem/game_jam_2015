@@ -127,7 +127,7 @@ def create_world():
             if i and i[0] != '#':
                 name, keyword, attribute, short_desc, description, room\
                     = i.split(';');
-                print (name)
+
                 keyword = keyword.split(':')
                 attribute = attribute.split(':')
                 attribute = list(map(create_attribute, attribute))
