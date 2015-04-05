@@ -11,14 +11,20 @@ def evaluate_in(event):
     text_in.delete(0, tk.END)
 
 def socket_thread(sock, text_out):
+    pickle_separator = b'q\x00.'
+
     while True:
         data = sock.recv(1024)
-        if data:
-            data = pickle.loads(data)
-            print(data)
-            write_to(text_out, data)
-        else:
+        if not data:
             break
+
+        data = data.split(pickle_separator)
+        for datum in data:
+            if datum == b'':
+                continue
+            datum = (datum + pickle_separator)
+            datum = pickle.loads(datum)
+            write_to(text_out, datum)
 
 def write_to(dest, msg):
     #dest.update_idletasks()
@@ -46,7 +52,7 @@ def main():
     text_in.bind("<Return>", evaluate_in)
     text_in.pack()
 
-    
+
     HOST = 'arctem.com'
     HOST = 'localhost'
     PORT = 50001
