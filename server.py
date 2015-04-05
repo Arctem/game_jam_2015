@@ -178,9 +178,8 @@ def create_world():
             for d in world.rooms:
                 if destination in d.keywords:
                     dest = d
-            print(source, destination)
-            assert src
-            assert dest
+            assert src, '{} is not a room.'.format(source)
+            assert dest, '{} is not a room.'.format(destination)
             s.add_connection(Connection(src, dest, short_desc, description,
                 pass_desc, keyword, attribute, locked))
     f.close()
