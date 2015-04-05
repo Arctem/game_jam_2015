@@ -72,6 +72,8 @@ def handle_message(client, player_data, msg, world):
             player.send_msg('You say "{}".'.format(args))
         elif cmd == 'TAKE':
             player.take_item(args)
+        elif cmd == 'DROP':
+            player.drop_item(args)
         else:
             extras = player.gather_actions()
             if cmd in extras:
@@ -93,8 +95,11 @@ def create_world():
                     possible_start = i.split(';')
                 #print (i)
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 if possible_start == "0":
                         possible_start = False#change to false to enable locking
                 else:
@@ -112,8 +117,11 @@ def create_world():
                 name, keyword, attribute, short_desc, description, room\
                     = i.split(';');
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Decoration(name, short_desc, description,
@@ -130,8 +138,11 @@ def create_world():
                     = i.split(';');
 
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(create_attribute, attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Item(name, short_desc, description,
@@ -147,8 +158,11 @@ def create_world():
                 name, keyword, attribute, short_desc, description, source,\
                     destination, pass_desc, locked, locked_desc = i.split(';')
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 if locked == '0':
                     locked = False#Set false to enable locking
                 else:
@@ -174,49 +188,48 @@ def main():
     port = 50001
     backlog = 5
     size = 1024
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server.bind((host, port))
-    server.listen(backlog)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+        server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        server.bind((host, port))
+        server.listen(backlog)
 
-    clients = [server]
-    player_data = {}
+        clients = [server]
+        player_data = {}
 
-    world = create_world()
+        world = create_world()
+        world.ready()
 
-    running = True
-    print('Socket now listening.')
-    while running:
-        input_ready, output_ready, except_ready = select.select(clients, [], [])
-        
-        for s in input_ready:
-            if s == server:
-                client, address = server.accept()
-                print("Received connection from {}.".format(address))
-                clients.append(client)
-                player_data[client] = None
-                client.sendall(pickle.dumps('What is your name?'))
+        running = True
+        print('Socket now listening.')
+        while running:
+            input_ready, output_ready, except_ready = select.select(clients, [], [])
+            
+            with world.lock:
+                for s in input_ready:
+                    if s == server:
+                        client, address = server.accept()
+                        print("Received connection from {}.".format(address))
+                        clients.append(client)
+                        player_data[client] = None
+                        client.sendall(pickle.dumps('What is your name?'))
 
-            else:
-                #handle other sockets
-                try:
-                    data = s.recv(size)
-                except (ConnectionResetError, TimeoutError) as e:
-                    #count as closed if other connection terminated early
-                    data = None
-                #print(data)
-                if data:
-                    data = pickle.loads(data)
-                    handle_message(s, player_data, data, world)
-                else:
-                    #this socket closed
-                    print("Connection closed remotely.")
-                    s.close()
-                    clients.remove(s)
-                    del player_data[s]
-
-    server.close()
-
+                    else:
+                        #handle other sockets
+                        try:
+                            data = s.recv(size)
+                        except (ConnectionResetError, TimeoutError) as e:
+                            #count as closed if other connection terminated early
+                            data = None
+                        #print(data)
+                        if data:
+                            data = pickle.loads(data)
+                            handle_message(s, player_data, data, world)
+                        else:
+                            #this socket closed
+                            print("Connection closed remotely.")
+                            s.close()
+                            clients.remove(s)
+                            del player_data[s]
 
 if __name__ == '__main__':
     main()
