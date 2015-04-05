@@ -94,8 +94,11 @@ def create_world():
                     possible_start = i.split(';')
                 #print (i)
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 if possible_start == "0":
                         possible_start = False#change to false to enable locking
                 else:
@@ -113,8 +116,11 @@ def create_world():
                 name, keyword, attribute, short_desc, description, room\
                     = i.split(';');
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Decoration(name, short_desc, description,
@@ -131,8 +137,11 @@ def create_world():
                     = i.split(';');
 
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(create_attribute, attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 for r in world.rooms:
                     if room in r.keywords:
                         r.add_content(Item(name, short_desc, description,
@@ -148,8 +157,11 @@ def create_world():
                 name, keyword, attribute, short_desc, description, source,\
                     destination, pass_desc, locked, locked_desc = i.split(';')
                 keyword = keyword.split(':')
-                attribute = attribute.split(':')
-                attribute = list(map(lambda a: a.split(',', 1), attribute))
+                if len(attribute) is 0:
+                    attribute = []
+                else:
+                    attribute = attribute.split(':')
+                    attribute = list(map(create_attribute, attribute))
                 if locked == '0':
                     locked = False#Set false to enable locking
                 else:

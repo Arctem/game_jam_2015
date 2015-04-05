@@ -23,8 +23,8 @@ class World:
         self.rooms.append(room)
 
     def get_random_spawn(self):
-        spawns = list(filter(lambda r: r.contains(CloneBay)
-            ,self.rooms))
+        spawns = list(filter(lambda r: r.contains(CloneBay),
+            self.rooms))
         return random.choice(spawns)
 
     def ready(self):
