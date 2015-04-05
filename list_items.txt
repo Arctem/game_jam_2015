@@ -2,8 +2,10 @@ Ray's Gun;gun:pistol:ray gun:ray's gun;ranged_weapon;a small pistol;A small lase
 
 important data;data:important data:holopad:pad;;an important-looking holopad;A holopad that seems like it holds some very important data from operations.;ops
 
-Amanda's Machine;amanda's machine:amanda:machine gun:machine;ranged_weapon;a large machine gun;A machine gun affectionately named "Amanda".;hold
+Amanda:amanda:machine gun:machine;ranged_weapon;a large machine gun;A machine gun affectionately named "Amanda".;hold
 
-Bow Peep;bow:arrows:bow and arrow:bow arrows:bow and arrow:bow arrow:arrows;ranged_weapon;a set of bow and arrows;An elegant bow with somewhat old arrows to match it.;hold
+bow and arrows;bow:arrows:bow and arrow:bow arrows:bow and arrow:bow arrow:arrows;ranged_weapon;a set of bow and arrows;An elegant bow with somewhat old arrows to match it.;hold
 
 darts;dart:darts;ranged_weapon;a set of darts;A set of darts that seem extra sharp. They might be lined with poison.;rec
+
+task;task:paper:notes:note:task paper;;an important piece of paper;This paper has your task on it. You mustn't lose it.
