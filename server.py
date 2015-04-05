@@ -184,6 +184,7 @@ def main():
     world = create_world()
 
     running = True
+    print('Socket now listening.')
     while running:
         input_ready, output_ready, except_ready = select.select(clients, [], [])
         
