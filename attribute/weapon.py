@@ -14,15 +14,19 @@ class RangedWeapon(Weapon):
         if len(args) == 0:
             player.send_msg('What would you like to shoot?')
         else:
-            targets = list(filter(lambda c: isinstance(c, Player) and
-                c.name.lower() == args.lower(), player.room.contents))
+            targets = list(filter(lambda c: RangedWeapon.valid_target,
+                player.room.contents))
             if len(targets) == 1:
-                targets[0].inform_others('{} shoots {}!'.format(player.name,
-                    targets[0].name))
-                targets[0].send_msg('{} shoots you!'.format(player.name))
-                targets[0].kill('shot')
+                target = targets[0]
+                if isinstance(target, Player):
+                    targets[0].inform_others('{} shoots {}!'.format(player.name,
+                        targets[0].name))
+                    targets[0].send_msg('{} shoots you!'.format(player.name))
+                    targets[0].kill('shot')
+                else:
+                    target.shoot(player, self)
 
-    def valid_target(item, args):
+    def valid_target(item):
         if isinstance(item, Player) and c.name.lower() == args.lower():
             return True
         elif isinstance(item, Decoration):

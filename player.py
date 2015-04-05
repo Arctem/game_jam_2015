@@ -13,6 +13,7 @@ class Player:
         self.room = None
         self.inventory = []
         self.clothes = clothes
+        self.mission = None
 
     def short_description(self):
         return self.name
@@ -124,6 +125,10 @@ class Player:
 
         self.room.player_leave(self)
         self.set_room(None)
+
+    def give_mission(self, mission):
+        self.mission = mission
+        self.mission.start()
 
     def send_msg(self, msg):
         self.sock.sendall(pickle.dumps(msg))

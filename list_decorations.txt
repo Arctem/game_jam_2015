@@ -13,7 +13,7 @@ conference_table;table:conference table;;a boring conference table;The table is 
 holovision;holovision:tv:television:holo;;a holo on the wall;The holo is a holovision that will be used in meeting and briefings. It glows a slight light blue when it's not in use.;brief
 
 #landing
-security_camera;security:camera:security camera:cam;;a security camera;You look up towards the security camera. It gives you the creeps. "keep moving," a robotic voice says from the camera;landing
+security_camera;security:camera:security camera:cam;;a security camera;You look up towards the security camera. It gives you the creeps. "Keep moving," whispers a robotic voice behind you.;landing
 
 stain;stain;;a stain in the middle of the floor;You look at the stain. It has been there for a while. You can see your reflection in the stain;landing
 
@@ -23,7 +23,6 @@ dining_table;dining table:table:table and chairs:tables:dining tables;; a set of
 chandelier;chandelier:chandeliers;; a set of chandeliers hanging on the ceiling, giving off an elegant mood to the room.;You look closely at one of the chandeliers. It is made of dozens of little crystals that reflect light off of small bulbs as well as candles. They give off enough light to make the cafeteria have some light;cafeteria
 #galley
 cooking_area;cooking:area:cooking area;;a cooking area;As you look around the cooking area you see a bunch of equipment you have no idea how to use.;galley
-stowaway;stowaway:person;stowaway;an out of place person;This person doesn't look like they belong here. Maybe you should do something;galley
 
 #quarters
 your_bed;bed;;your bed;This is your bed. There is nothing special about it but the smell;quarters

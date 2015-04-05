@@ -8,7 +8,7 @@ class Person(Attribute):
         Attribute.__init__(self)
 
 class Stowaway(Person, Shootable):
-    def __init__(self, args):
+    def __init__(self, args=None):
         Person.__init__(self)
         Shootable.__init__(self)
 
@@ -21,12 +21,9 @@ class Stowaway(Person, Shootable):
             targets = list(filter(lambda c: isinstance(c, Decoration) and
                 c.name.lower() == args.lower(), player.room.contents))
             if len(targets) == 1:
-                player.send_msg('"Please don\'t hurt me," the hostage begged."I want to help you," you say, still unsure if you want to HELP him or dispose of him. You were ordered to get ELIMINATE him as he is an evil man, but you also are wary of elimination life.')
-                self.commands['ELIMINATE'] = self.eliminate
-                self.commands['HELP'] = self.help
+                player.send_msg('"Please don\'t hurt me," the hostage begged. "I want to help you," you say, still unsure if you want to HELP him or dispose of him. You were ordered to get ELIMINATE him as he is an evil man, but you also are wary of elimination life.')
 
-    def eliminate(player):
-        player.send_msg('You eliminated.')
-
-    def help(player):
-        player.send_msg('You helped.')
+def make_new_stowaway():
+    return Decoration('Stowaway', 'an out of place person',
+        "This person doesn't look like they belong here.",
+        ['stowaway', 'person'], [Stowaway()])
