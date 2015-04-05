@@ -8,7 +8,7 @@ blue_door_out;blue door:blue;;a blue door;This is a straight, polished blue door
 
 red_stairs_down;red stairs:red:stairs:down stairs:down;;a set of red stairs leading downward;These are clean, shiny red steps that lead down to the floor below.;landing;hall;You step down.;0;This should never be locked, because it's not a door.
 
-red_stairs_up;red stairs:red:up stairs;;a set of red stairs leading upward;These are clean, shiny red steps thaat lead down to the floor below.;hall;landing;You step up.;0;These stairs cannot possibly be locked.
+red_stairs_up;red stairs:red:up stairs;;a set of red stairs leading upward;These are clean, shiny red steps that lead down to the floor below.;hall;landing;You step up.;0;These stairs cannot possibly be locked.
 
 green_door_in;green door:green:greene door:greene;;a green door;This is a slightly shabby, old-fashioned green door with a door knob. Above it a sign says "CREW QUARTERS".;hall;quarters;You open the door with the handle. It feels strange to have to do so in a modern vessel such as this. You go through.;0;You can always go to your quarters.
 
@@ -24,7 +24,7 @@ pink_door_out;pink door:pink;;a pink door;This is a somewhat faded but still mod
 
 magenta_door_in;magenta door:magenta;;a magenta door;This is a notable magenta door with the words "GALLEY" and "PUSH" engraved into its metal.;cafe;galley;You near the door and push it open. You walk through.;1;You near the door and push. It does not budge.
 
-magenta_door_out;magenta door:magenta:door;a magenta door;This is a notable magenta door with the word "PUSH" egraved into its metal.;galley;cafe;You near the door and push it open. You walk through.;0;You near the door and push. It does not budge.
+magenta_door_out;magenta door:magenta:door;;a magenta door;This is a notable magenta door with the word "PUSH" egraved into its metal.;galley;cafe;You near the door and push it open. You walk through.;0;You near the door and push. It does not budge.
 
 white_stairs_down;white stairs:white:down stairs;;a set of white stairs leading downward;These are glimmering and clean white stairs leading down to a lower level.;hall;corridor;You step down.;0;That redheaded CS major doesn't want you to go down the stairs. You are intimidated by his intelligence.
 

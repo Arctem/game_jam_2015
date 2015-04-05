@@ -18,6 +18,8 @@ the propulsion room;propulsion:propulsion room;;the propulsion room;This room is
 
 the brig;brig:prison:jail;;the brig;This is an eery looking room. It's a bit dark and it has bars blocking you from the prisoners.;0
 
+the hold;hold:cargo hold;;the cargo hold;This is a very large room used for storage.;0
+
 the recreation room;rec room:recreation room:rec:recreation;;the recreation room;The recreation room is a bit cool and has a comfortable, homey feel to put the crew at ease.;1
 
 corridor;corridor:third floor hall:third floor hallway;;the lowest hallway;This hallway is brightly lit and is the widest hallway aboard this vessel so as to accomidate cargo shipments.;0
