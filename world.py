@@ -1,4 +1,7 @@
 import random
+import threading
+from threading import Lock
+import time
 
 from special.clone import ClonePod
 from attribute.clonebay import CloneBay
@@ -7,6 +10,8 @@ class World:
     def __init__(self):
         self.rooms = []
         self.players = []
+        self.lock = Lock()
+        self.tick_count = 0
 
     def add_player(self, player):
         self.players.append(player)
@@ -21,3 +26,17 @@ class World:
         spawns = list(filter(lambda r: r.contains(CloneBay)
             ,self.rooms))
         return random.choice(spawns)
+
+    def ready(self):
+        t = threading.Thread(target=self.repeating_tasks, args=tuple())
+        t.start()
+
+    def repeating_tasks(self):
+        while True:
+            time.sleep(5)
+
+            with self.lock:
+                self.tick_count += 1
+                print('Server tick {}.'.format(self.tick_count))
+                time.sleep(3)
+                print('Server tick {} ending.'.format(self.tick_count))

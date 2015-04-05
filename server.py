@@ -173,49 +173,48 @@ def main():
     port = 50001
     backlog = 5
     size = 1024
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server.bind((host, port))
-    server.listen(backlog)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+        server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        server.bind((host, port))
+        server.listen(backlog)
 
-    clients = [server]
-    player_data = {}
+        clients = [server]
+        player_data = {}
 
-    world = create_world()
+        world = create_world()
+        world.ready()
 
-    running = True
-    print('Socket now listening.')
-    while running:
-        input_ready, output_ready, except_ready = select.select(clients, [], [])
-        
-        for s in input_ready:
-            if s == server:
-                client, address = server.accept()
-                print("Received connection from {}.".format(address))
-                clients.append(client)
-                player_data[client] = None
-                client.sendall(pickle.dumps('What is your name?'))
+        running = True
+        print('Socket now listening.')
+        while running:
+            input_ready, output_ready, except_ready = select.select(clients, [], [])
+            
+            with world.lock:
+                for s in input_ready:
+                    if s == server:
+                        client, address = server.accept()
+                        print("Received connection from {}.".format(address))
+                        clients.append(client)
+                        player_data[client] = None
+                        client.sendall(pickle.dumps('What is your name?'))
 
-            else:
-                #handle other sockets
-                try:
-                    data = s.recv(size)
-                except (ConnectionResetError, TimeoutError) as e:
-                    #count as closed if other connection terminated early
-                    data = None
-                #print(data)
-                if data:
-                    data = pickle.loads(data)
-                    handle_message(s, player_data, data, world)
-                else:
-                    #this socket closed
-                    print("Connection closed remotely.")
-                    s.close()
-                    clients.remove(s)
-                    del player_data[s]
-
-    server.close()
-
+                    else:
+                        #handle other sockets
+                        try:
+                            data = s.recv(size)
+                        except (ConnectionResetError, TimeoutError) as e:
+                            #count as closed if other connection terminated early
+                            data = None
+                        #print(data)
+                        if data:
+                            data = pickle.loads(data)
+                            handle_message(s, player_data, data, world)
+                        else:
+                            #this socket closed
+                            print("Connection closed remotely.")
+                            s.close()
+                            clients.remove(s)
+                            del player_data[s]
 
 if __name__ == '__main__':
     main()
