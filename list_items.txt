@@ -8,4 +8,4 @@ bow and arrows;bow:arrows:bow and arrow:bow arrows:bow and arrow:bow arrow:arrow
 
 darts;dart:darts;ranged_weapon;a set of darts;A set of darts that seem extra sharp. They might be lined with poison.;rec
 
-task;task:paper:notes:note:task paper;;an important piece of paper;This paper has your task on it. You mustn't lose it.
+task;task:paper:notes:note:task paper;;an important piece of paper;This paper has your task on it. You mustn't lose it.;briefing
