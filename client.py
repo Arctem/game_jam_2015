@@ -56,7 +56,7 @@ def main():
 
 
     HOST = 'arctem.com'
-    HOST = 'localhost'
+    #HOST = 'localhost'
     PORT = 50001
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((HOST, PORT))
